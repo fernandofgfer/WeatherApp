@@ -16,6 +16,7 @@
 		076812D12631B5300023448F /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076812D02631B5300023448F /* WeatherAppTests.swift */; };
 		076812DC2631B5300023448F /* WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076812DB2631B5300023448F /* WeatherAppUITests.swift */; };
 		076812F42631B6970023448F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076812F32631B6970023448F /* ApiClient.swift */; };
+		076813072631C9DD0023448F /* WeatherDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076813062631C9DD0023448F /* WeatherDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		076812DB2631B5300023448F /* WeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITests.swift; sourceTree = "<group>"; };
 		076812DD2631B5300023448F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		076812F32631B6970023448F /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		076813062631C9DD0023448F /* WeatherDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		076812B82631B52F0023448F /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				076813052631C9CA0023448F /* WeatherDataManager */,
 				076812F22631B68A0023448F /* Network */,
 				076812B92631B52F0023448F /* AppDelegate.swift */,
 				076812BB2631B52F0023448F /* SceneDelegate.swift */,
@@ -137,6 +140,14 @@
 				076812F32631B6970023448F /* ApiClient.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		076813052631C9CA0023448F /* WeatherDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				076813062631C9DD0023448F /* WeatherDTO.swift */,
+			);
+			path = WeatherDataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +282,7 @@
 			files = (
 				076812BE2631B52F0023448F /* ViewController.swift in Sources */,
 				076812F42631B6970023448F /* ApiClient.swift in Sources */,
+				076813072631C9DD0023448F /* WeatherDTO.swift in Sources */,
 				076812BA2631B52F0023448F /* AppDelegate.swift in Sources */,
 				076812BC2631B52F0023448F /* SceneDelegate.swift in Sources */,
 			);
