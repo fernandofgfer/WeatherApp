@@ -10,6 +10,7 @@
 		073A82F72631CE730024B0A6 /* WeatherDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A82F62631CE730024B0A6 /* WeatherDataManager.swift */; };
 		075757DB2631D60000176365 /* StorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075757DA2631D60000176365 /* StorageClient.swift */; };
 		075757E62631DEB400176365 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075757E52631DEB400176365 /* HomeInteractor.swift */; };
+		075757EB2631FE2600176365 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075757EA2631FE2600176365 /* HomePresenter.swift */; };
 		076812BA2631B52F0023448F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076812B92631B52F0023448F /* AppDelegate.swift */; };
 		076812BC2631B52F0023448F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076812BB2631B52F0023448F /* SceneDelegate.swift */; };
 		076812BE2631B52F0023448F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076812BD2631B52F0023448F /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 		073A82F62631CE730024B0A6 /* WeatherDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataManager.swift; sourceTree = "<group>"; };
 		075757DA2631D60000176365 /* StorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageClient.swift; sourceTree = "<group>"; };
 		075757E52631DEB400176365 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		075757EA2631FE2600176365 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		076812B62631B52F0023448F /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		076812B92631B52F0023448F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		076812BB2631B52F0023448F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		075757E12631DE9500176365 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				075757EA2631FE2600176365 /* HomePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				075757E62631DEB400176365 /* HomeInteractor.swift in Sources */,
 				076812F42631B6970023448F /* ApiClient.swift in Sources */,
 				076813072631C9DD0023448F /* WeatherDTO.swift in Sources */,
+				075757EB2631FE2600176365 /* HomePresenter.swift in Sources */,
 				076812BA2631B52F0023448F /* AppDelegate.swift in Sources */,
 				076812BC2631B52F0023448F /* SceneDelegate.swift in Sources */,
 			);

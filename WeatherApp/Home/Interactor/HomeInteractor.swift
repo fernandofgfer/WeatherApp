@@ -13,8 +13,10 @@ protocol HomeInteractorProtocol {
 
 class HomeInteractor {
     
-    let weatherDataManager: WeatherDataManagerProtocol
-    let storageClient: StorageClientProtocol
+    private let weatherDataManager: WeatherDataManagerProtocol
+    private let storageClient: StorageClientProtocol
+    
+    weak var presenter: HomeInteractorOutputProtocol?
     
     init(weatherDataManager: WeatherDataManagerProtocol,
          storageClient: StorageClientProtocol) {
@@ -29,7 +31,7 @@ class HomeInteractor {
             }
             return
         }
-        // Return data
+        presenter?.weatherDataReturned(weather: data)
     }
     
     func fetchStoredData() -> WeatherDTO? {
@@ -39,7 +41,7 @@ class HomeInteractor {
     func manageResult(result: Result<WeatherDTO, ApiClientError>) {
         switch result {
         case .success(let dto):
-            // Return data
+            presenter?.weatherDataReturned(weather: dto)
             storageClient.save(key: "File", data: dto)
             return
         default:
