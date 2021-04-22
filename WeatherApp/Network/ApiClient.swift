@@ -1,0 +1,76 @@
+//
+//  ApiClientProtocol.swift
+//  WeatherApp
+//
+//  Created by Fernando Garcia Fernandez on 22/4/21.
+//
+
+import Foundation
+
+public enum ApiClientError: Error {
+    case unknown
+    case noInternet
+    case noData
+    case decodeFailed
+    case urlWrong
+}
+
+public enum HTTPMethod: String {
+    case get = "GET"
+}
+
+typealias Callback<T> = (Result<T, ApiClientError>) -> Void
+
+protocol ApiClientProtocol {
+    func fetch<T: Decodable>(resource: Resource, completion: @escaping Callback<T>)
+}
+
+struct Resource {
+    let path: String
+    let method: HTTPMethod
+    let parameters: [String: String]
+}
+
+class ApiClient: ApiClientProtocol {
+    
+    var urlSession: URLSession
+    
+    init(urlSession: URLSession) {
+        self.urlSession = urlSession
+    }
+    
+    private func makeRequest(resource: Resource) -> URLRequest? {
+        guard let url = URL(string: resource.path) else { return nil }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = resource.method.rawValue
+        // TODO:-  Add Parameters
+        return urlRequest
+    }
+    
+    func fetch<T>(resource: Resource, completion: @escaping Callback<T>) where T : Decodable {
+        guard let request = makeRequest(resource: resource) else {
+            completion(.failure(.urlWrong))
+            return
+        }
+        
+        let task = urlSession.dataTask(with: request) { (data, response, error) in
+            guard error == nil else {
+                completion(.failure(.noInternet))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            guard let response = try? JSONDecoder().decode(T.self, from: data) else {
+                completion(.failure(.decodeFailed))
+                return
+            }
+            
+            completion(.success(response))
+        }
+        task.resume()
+    }
+}
