@@ -8,8 +8,8 @@
 import Foundation
 
 protocol StorageClientProtocol {
-    func save<T:Codable>(key: String, data: T)
-    func fetch<T:Codable>(key: String) -> T?
+    func save<T: Codable>(key: String, data: T)
+    func fetch<T: Codable>(key: String) -> T?
 }
 
 class StorageClient: StorageClientProtocol {
