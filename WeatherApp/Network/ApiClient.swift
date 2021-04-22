@@ -43,7 +43,12 @@ class ApiClient: ApiClientProtocol {
         guard let url = URL(string: resource.path) else { return nil }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = resource.method.rawValue
-        // TODO:-  Add Parameters
+        if !resource.parameters.isEmpty {
+            if var urlComponents = URLComponents(string: resource.path) {
+                urlComponents.queryItems = resource.parameters.map { URLQueryItem(name: $0, value: $1) }
+                urlRequest.url = urlComponents.url
+            }
+        }
         return urlRequest
     }
     

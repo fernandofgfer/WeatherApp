@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		073A82F72631CE730024B0A6 /* WeatherDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A82F62631CE730024B0A6 /* WeatherDataManager.swift */; };
 		076812BA2631B52F0023448F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076812B92631B52F0023448F /* AppDelegate.swift */; };
 		076812BC2631B52F0023448F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076812BB2631B52F0023448F /* SceneDelegate.swift */; };
 		076812BE2631B52F0023448F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076812BD2631B52F0023448F /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		073A82F62631CE730024B0A6 /* WeatherDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataManager.swift; sourceTree = "<group>"; };
 		076812B62631B52F0023448F /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		076812B92631B52F0023448F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		076812BB2631B52F0023448F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				076813062631C9DD0023448F /* WeatherDTO.swift */,
+				073A82F62631CE730024B0A6 /* WeatherDataManager.swift */,
 			);
 			path = WeatherDataManager;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073A82F72631CE730024B0A6 /* WeatherDataManager.swift in Sources */,
 				076812BE2631B52F0023448F /* ViewController.swift in Sources */,
 				076812F42631B6970023448F /* ApiClient.swift in Sources */,
 				076813072631C9DD0023448F /* WeatherDTO.swift in Sources */,
