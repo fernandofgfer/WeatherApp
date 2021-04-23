@@ -35,7 +35,7 @@ struct WeatherDTO: Codable {
         }
     }
     
-    struct Weather: Codable{
+    struct Weather: Codable {
         let id: Int
         let main: String
         let description: String
