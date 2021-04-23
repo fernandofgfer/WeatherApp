@@ -24,6 +24,8 @@
 		076812F42631B6970023448F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076812F32631B6970023448F /* ApiClient.swift */; };
 		076813072631C9DD0023448F /* WeatherDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076813062631C9DD0023448F /* WeatherDTO.swift */; };
 		07B3A2982633031400DE8890 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2972633031400DE8890 /* HomeViewModel.swift */; };
+		07B3A29D26330F3900DE8890 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A29C26330F3900DE8890 /* HomeViewController.swift */; };
+		07B3A2A22633140F00DE8890 /* HomeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2A12633140F00DE8890 /* HomeAssembler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		076812F32631B6970023448F /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		076813062631C9DD0023448F /* WeatherDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDTO.swift; sourceTree = "<group>"; };
 		07B3A2972633031400DE8890 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		07B3A29C26330F3900DE8890 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		07B3A2A12633140F00DE8890 /* HomeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				07B3A2962633030500DE8890 /* HomeViewModel */,
+				07B3A29C26330F3900DE8890 /* HomeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 		075757E42631DEA200176365 /* Assembler */ = {
 			isa = PBXGroup;
 			children = (
+				07B3A2A12633140F00DE8890 /* HomeAssembler.swift */,
 			);
 			path = Assembler;
 			sourceTree = "<group>";
@@ -384,6 +390,8 @@
 				076813072631C9DD0023448F /* WeatherDTO.swift in Sources */,
 				075757EB2631FE2600176365 /* HomePresenter.swift in Sources */,
 				076812BA2631B52F0023448F /* AppDelegate.swift in Sources */,
+				07B3A2A22633140F00DE8890 /* HomeAssembler.swift in Sources */,
+				07B3A29D26330F3900DE8890 /* HomeViewController.swift in Sources */,
 				076812BC2631B52F0023448F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

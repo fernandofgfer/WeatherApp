@@ -8,6 +8,7 @@
 import Foundation
 
 protocol HomePresenterProtocol {
+    var view: HomeViewProtocol? { get set }
     func viewDidLoad()
 }
 
@@ -17,6 +18,7 @@ protocol HomeInteractorOutputProtocol: AnyObject {
 
 class HomePresenter: HomePresenterProtocol {
     
+    var view: HomeViewProtocol?
     private let interactor: HomeInteractorProtocol
     private let homeViewModelFactory: HomeViewModelFactoryProtocol
     private var weatherMomentList: [WeatherMoment] = []
@@ -32,7 +34,7 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func paintViewModel(viewModel: [HomeViewModel]) {
-        
+        view?.reloadTable(numberOfCells: viewModel.count)
     }
 }
 

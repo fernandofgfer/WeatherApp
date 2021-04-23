@@ -11,7 +11,7 @@ protocol HomeInteractorProtocol {
     func fetchWeatherData()
 }
 
-class HomeInteractor {
+class HomeInteractor: HomeInteractorProtocol {
     
     private let weatherDataManager: WeatherDataManagerProtocol
     private let storageClient: StorageClientProtocol
