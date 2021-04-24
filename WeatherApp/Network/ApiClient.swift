@@ -13,6 +13,21 @@ public enum ApiClientError: Error {
     case noData
     case decodeFailed
     case urlWrong
+    
+    var message: String {
+        switch self {
+        case .unknown:
+            return "Unknown error received"
+        case .decodeFailed:
+            return "Decode data failed"
+        case .noData:
+            return "Response without data"
+        case .urlWrong:
+            return "URL failed"
+        case .noInternet:
+            return "Network problem"
+        }
+    }
 }
 
 public enum HTTPMethod: String {

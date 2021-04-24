@@ -37,13 +37,9 @@ class HomeInteractor: HomeInteractorProtocol {
     // MARK: - HomeInteractorProtocol
     
     func fetchWeatherData() {
-        guard let dto = fetchStoredData() else {
-            weatherDataManager.fetch(location: HomeInteractor.city) {[weak self] result in
-                self?.manageResult(result: result)
-            }
-            return
+        weatherDataManager.fetch(location: HomeInteractor.city) {[weak self] result in
+            self?.manageResult(result: result)
         }
-        returnWeatherMoment(dto: dto)
     }
     
     // MARK: - Business logic
@@ -55,13 +51,26 @@ class HomeInteractor: HomeInteractorProtocol {
     func manageResult(result: Result<WeatherDTO, ApiClientError>) {
         switch result {
         case .success(let dto):
-            returnWeatherMoment(dto: dto)
-            storageClient.save(key: HomeInteractor.fileName, data: dto)
+            successResponse(dto: dto)
             return
-        default:
-            return
+        case .failure(let error):
+            failureResponse(error: error)
         }
     }
+    
+    func successResponse(dto: WeatherDTO) {
+        returnWeatherMoment(dto: dto)
+        storageClient.save(key: HomeInteractor.fileName, data: dto)
+    }
+    
+    func failureResponse(error: ApiClientError) {
+        guard let dto = fetchStoredData() else {
+            presenter?.showError(message: error.message)
+            return
+        }
+        returnWeatherMoment(dto: dto)
+    }
+    
     
     func returnWeatherMoment(dto: WeatherDTO) {
         presenter?.weatherDataReturned(weather: weatherMomentMapper.map(weatherDTO: dto, city: HomeInteractor.city))

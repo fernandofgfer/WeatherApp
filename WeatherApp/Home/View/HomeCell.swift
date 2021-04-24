@@ -133,7 +133,7 @@ class HomeCell: UITableViewCell {
 extension HomeCell: HomeCellProtocol {
     func loadData(viewModel: HomeViewModel) {
         cityLabel.text = viewModel.city
-        dateLabel.text = String(viewModel.day)
+        dateLabel.text = "\(String(viewModel.day)), \(Date().month)"
         descriptionLabel.text = viewModel.description.capitalized
         weatherImage.image = .add
     }

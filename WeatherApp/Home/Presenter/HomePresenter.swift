@@ -15,6 +15,7 @@ protocol HomePresenterProtocol {
 
 protocol HomeInteractorOutputProtocol: AnyObject {
     func weatherDataReturned(weather: [WeatherMoment])
+    func showError(message: String)
 }
 
 class HomePresenter: HomePresenterProtocol {
@@ -60,5 +61,9 @@ extension HomePresenter: HomeInteractorOutputProtocol {
         weatherMomentList = weather
         homeViewModelList = homeViewModelFactory.createViewModel(weatherMomentList: weatherMomentList)
         paintViewModel()
+    }
+    
+    func showError(message: String) {
+        view?.showError(message: message)
     }
 }

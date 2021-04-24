@@ -11,6 +11,7 @@ import UIKit
 protocol HomeViewProtocol {
     var presenter: HomePresenterProtocol { get }
     func reloadTable(numberOfCells: Int)
+    func showError(message: String)
 }
 
 class HomeViewController: UITableViewController, HomeViewProtocol {
@@ -56,6 +57,12 @@ class HomeViewController: UITableViewController, HomeViewProtocol {
         self.numberOfCells = numberOfCells
         DispatchQueue.main.async {
             self.tableView.reloadData()
+        }
+    }
+    
+    func showError(message: String) {
+        DispatchQueue.main.async {
+            self.showToast(message: message)
         }
     }
 }
