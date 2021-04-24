@@ -42,13 +42,12 @@ class HomeViewController: UITableViewController, HomeViewProtocol {
     // MARK: - Private methods
     
     private func setupView() {
-        view.backgroundColor = UIColor(red: 49.0/255.0, green: 102.0/255.0, blue: 107.0/255.0, alpha: 1)
+        view.backgroundColor = WeatherColors.backgroundMainColor
     }
     
     private func setUpTable() {
         tableView.register(HomeCell.self, forCellReuseIdentifier: String(describing: HomeCell.self))
         tableView.separatorStyle = .none
-        //tableView.backgroundColor = UIColor(red: 171.0/255.0, green: 215.0/255.0, blue: 235.0/255.0, alpha: 1)
     }
     
     // MARK: - HomeViewProtocol

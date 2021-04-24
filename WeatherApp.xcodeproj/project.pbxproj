@@ -29,6 +29,7 @@
 		07B3A2A72633175D00DE8890 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2A62633175D00DE8890 /* HomeCell.swift */; };
 		07B3A2AD2634664000DE8890 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2AC2634664000DE8890 /* Date+Utils.swift */; };
 		07B3A2B22634684D00DE8890 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2B12634684D00DE8890 /* UIViewController+Utils.swift */; };
+		07B3A2B826346CE100DE8890 /* WeatherColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2B726346CE100DE8890 /* WeatherColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		07B3A2A62633175D00DE8890 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		07B3A2AC2634664000DE8890 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		07B3A2B12634684D00DE8890 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		07B3A2B726346CE100DE8890 /* WeatherColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 		076812B82631B52F0023448F /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				07B3A2B626346CC700DE8890 /* Resources */,
 				07B3A2AB2634662500DE8890 /* Utils */,
 				075757DF2631DE5400176365 /* Home */,
 				075757D92631D5EE00176365 /* Storage */,
@@ -264,6 +267,14 @@
 				07B3A2B12634684D00DE8890 /* UIViewController+Utils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		07B3A2B626346CC700DE8890 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				07B3A2B726346CE100DE8890 /* WeatherColors.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +423,7 @@
 				076812BA2631B52F0023448F /* AppDelegate.swift in Sources */,
 				07B3A2A22633140F00DE8890 /* HomeAssembler.swift in Sources */,
 				07B3A29D26330F3900DE8890 /* HomeViewController.swift in Sources */,
+				07B3A2B826346CE100DE8890 /* WeatherColors.swift in Sources */,
 				076812BC2631B52F0023448F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
