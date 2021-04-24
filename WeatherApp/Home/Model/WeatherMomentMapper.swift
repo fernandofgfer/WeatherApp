@@ -8,15 +8,16 @@
 import Foundation
 
 protocol WeatherMomentMapperProtocol {
-    func map(weatherDTO: WeatherDTO) -> [WeatherMoment]
+    func map(weatherDTO: WeatherDTO, city: String) -> [WeatherMoment]
 }
 
 class WeatherMomentMapper: WeatherMomentMapperProtocol {
     
-    func map(weatherDTO: WeatherDTO) -> [WeatherMoment] {
+    func map(weatherDTO: WeatherDTO, city: String) -> [WeatherMoment] {
         return weatherDTO.list.map { weather in
             let dates = getDay(from: weather.dt)
-            return WeatherMoment(day: dates.day ?? 0,
+            return WeatherMoment(city: city,
+                                 day: dates.day ?? 0,
                                  hour: dates.hour ?? 0,
                                  conditions: getWeatherConditions(main: weather.main),
                                  status: getWeatherStatus(weather: weather.weather.first))

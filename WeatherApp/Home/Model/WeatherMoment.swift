@@ -7,13 +7,14 @@
 
 import Foundation
 
-struct WeatherMoment {
+struct WeatherMoment: Hashable {
+    let city: String
     let day: Int
     let hour: Int
     let conditions: WeatherConditions
     let status: Status
     
-    struct WeatherConditions {
+    struct WeatherConditions: Hashable {
         let currentTemperature: Double
         let minimumTemparature: Double
         let maximumTemperature: Double
@@ -22,8 +23,16 @@ struct WeatherMoment {
         let humidity: Double
     }
     
-    struct Status: Equatable {
+    struct Status: Equatable, Hashable {
         let description: String
         let icon: String
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(status)
+    }
+    
+    static func == (lhs: WeatherMoment, rhs: WeatherMoment) -> Bool {
+        return lhs.status == rhs.status
     }
 }

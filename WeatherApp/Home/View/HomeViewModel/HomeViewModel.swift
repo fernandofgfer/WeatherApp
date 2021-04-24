@@ -8,6 +8,7 @@
 import Foundation
 
 struct HomeViewModel {
+    let city: String
     let day: Int
     let image: String
     let description: String
@@ -23,16 +24,24 @@ class HomeViewModelFactory: HomeViewModelFactoryProtocol {
         let days = getDays(weatherMomentList: weatherMomentList)
         
         days.forEach { day in
-            let mostFrequent = getMostFrecuentStatus(status: weatherMomentList.filter { $0.day == day }.map { $0.status })
-            homeViewModelArray.append(HomeViewModel(day: day, image: mostFrequent?.icon ?? "", description: mostFrequent?.description ?? ""))
+            let mostFrequent = getMostFrecuentWeatherMoment(weatherMomentList: weatherMomentList.filter { $0.day == day })
+            homeViewModelArray.append(HomeViewModel(city: mostFrequent?.city ?? "",
+                                                    day: day,
+                                                    image: mostFrequent?.status.icon ?? "",
+                                                    description: mostFrequent?.status.description ?? ""))
         }
         
         return homeViewModelArray.sorted(by: { $0.day < $1.day })
     }
     
-    fileprivate func getMostFrecuentStatus(status: [WeatherMoment.Status]) -> WeatherMoment.Status? {
-        let countedSet = NSCountedSet(array: status)
-        return countedSet.max { countedSet.count(for: $0) < countedSet.count(for: $1) } as? WeatherMoment.Status
+    fileprivate func getMostFrecuentWeatherMoment(weatherMomentList: [WeatherMoment]) -> WeatherMoment? {
+        var repeated: [WeatherMoment: Int] = [:]
+        
+        weatherMomentList.forEach { weatherMoment in
+            repeated[weatherMoment] = (repeated[weatherMoment] ?? 0) + 1
+        }
+        
+        return repeated.sorted(by: {$0.1 > $1.1}).first?.key
     }
     
     fileprivate func getDays(weatherMomentList: [WeatherMoment]) -> [Int] {

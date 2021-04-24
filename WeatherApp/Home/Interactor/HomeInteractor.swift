@@ -20,6 +20,8 @@ class HomeInteractor: HomeInteractorProtocol {
     private let weatherDataManager: WeatherDataManagerProtocol
     private let storageClient: StorageClientProtocol
     private let weatherMomentMapper: WeatherMomentMapperProtocol
+    // This is only for the challengue
+    private static let city = "PARIS"
     
     // MARK: - Custom init
     
@@ -34,13 +36,13 @@ class HomeInteractor: HomeInteractorProtocol {
     // MARK: - HomeInteractorProtocol
     
     func fetchWeatherData() {
-        guard let data = fetchStoredData() else {
-            weatherDataManager.fetch(location: "LONDON") {[weak self] result in
+        guard let dto = fetchStoredData() else {
+            weatherDataManager.fetch(location: HomeInteractor.city) {[weak self] result in
                 self?.manageResult(result: result)
             }
             return
         }
-        presenter?.weatherDataReturned(weather: weatherMomentMapper.map(weatherDTO: data))
+        returnWeatherMoment(dto: dto)
     }
     
     // MARK: - Business logic
@@ -52,11 +54,15 @@ class HomeInteractor: HomeInteractorProtocol {
     func manageResult(result: Result<WeatherDTO, ApiClientError>) {
         switch result {
         case .success(let dto):
-            presenter?.weatherDataReturned(weather: weatherMomentMapper.map(weatherDTO: dto))
+            returnWeatherMoment(dto: dto)
             storageClient.save(key: "File", data: dto)
             return
         default:
             return
         }
+    }
+    
+    func returnWeatherMoment(dto: WeatherDTO) {
+        presenter?.weatherDataReturned(weather: weatherMomentMapper.map(weatherDTO: dto, city: HomeInteractor.city))
     }
 }
