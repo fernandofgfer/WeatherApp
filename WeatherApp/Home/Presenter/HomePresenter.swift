@@ -10,6 +10,7 @@ import Foundation
 protocol HomePresenterProtocol {
     var view: HomeViewProtocol? { get set }
     func viewDidLoad()
+    func configureCell(index: Int, cell: HomeCellProtocol?)
 }
 
 protocol HomeInteractorOutputProtocol: AnyObject {
@@ -19,9 +20,14 @@ protocol HomeInteractorOutputProtocol: AnyObject {
 class HomePresenter: HomePresenterProtocol {
     
     var view: HomeViewProtocol?
+    
+    // MARK: - Private
     private let interactor: HomeInteractorProtocol
     private let homeViewModelFactory: HomeViewModelFactoryProtocol
     private var weatherMomentList: [WeatherMoment] = []
+    private var homeViewModelList: [HomeViewModel] = []
+    
+    // MARK: - Custom init
     
     init(interactor: HomeInteractorProtocol,
          homeViewModelFactory: HomeViewModelFactoryProtocol) {
@@ -29,18 +35,30 @@ class HomePresenter: HomePresenterProtocol {
         self.homeViewModelFactory = homeViewModelFactory
     }
     
+    // MARK: - HomePresenterProtocol
+    
     func viewDidLoad() {
         interactor.fetchWeatherData()
     }
     
-    func paintViewModel(viewModel: [HomeViewModel]) {
-        view?.reloadTable(numberOfCells: viewModel.count)
+    func configureCell(index: Int, cell: HomeCellProtocol?) {
+        cell?.loadData(viewModel: homeViewModelList[index])
+    }
+    
+    // MARK: - Private methods
+    
+    private func paintViewModel() {
+        view?.reloadTable(numberOfCells: homeViewModelList.count)
     }
 }
 
 extension HomePresenter: HomeInteractorOutputProtocol {
+    
+    // MARK: - HomeInteractorOutputProtocol
+    
     func weatherDataReturned(weather: [WeatherMoment]) {
         weatherMomentList = weather
-        paintViewModel(viewModel: homeViewModelFactory.createViewModel(weatherMomentList: weatherMomentList))
+        homeViewModelList = homeViewModelFactory.createViewModel(weatherMomentList: weatherMomentList)
+        paintViewModel()
     }
 }

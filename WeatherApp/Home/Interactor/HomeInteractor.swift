@@ -13,11 +13,15 @@ protocol HomeInteractorProtocol {
 
 class HomeInteractor: HomeInteractorProtocol {
     
+    weak var presenter: HomeInteractorOutputProtocol?
+    
+    // MARK: - Private variables
+    
     private let weatherDataManager: WeatherDataManagerProtocol
     private let storageClient: StorageClientProtocol
     private let weatherMomentMapper: WeatherMomentMapperProtocol
     
-    weak var presenter: HomeInteractorOutputProtocol?
+    // MARK: - Custom init
     
     init(weatherDataManager: WeatherDataManagerProtocol,
          storageClient: StorageClientProtocol,
@@ -26,6 +30,8 @@ class HomeInteractor: HomeInteractorProtocol {
         self.storageClient = storageClient
         self.weatherMomentMapper = weatherMomentMapper
     }
+    
+    // MARK: - HomeInteractorProtocol
     
     func fetchWeatherData() {
         guard let data = fetchStoredData() else {
@@ -36,6 +42,8 @@ class HomeInteractor: HomeInteractorProtocol {
         }
         presenter?.weatherDataReturned(weather: weatherMomentMapper.map(weatherDTO: data))
     }
+    
+    // MARK: - Business logic
     
     func fetchStoredData() -> WeatherDTO? {
         return storageClient.fetch(key: "file")
