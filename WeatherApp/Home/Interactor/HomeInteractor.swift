@@ -22,6 +22,7 @@ class HomeInteractor: HomeInteractorProtocol {
     private let weatherMomentMapper: WeatherMomentMapperProtocol
     // This is only for the challengue
     private static let city = "PARIS"
+    private static let fileName = "FileStorage"
     
     // MARK: - Custom init
     
@@ -48,14 +49,14 @@ class HomeInteractor: HomeInteractorProtocol {
     // MARK: - Business logic
     
     func fetchStoredData() -> WeatherDTO? {
-        return storageClient.fetch(key: "file")
+        return storageClient.fetch(key: HomeInteractor.fileName)
     }
     
     func manageResult(result: Result<WeatherDTO, ApiClientError>) {
         switch result {
         case .success(let dto):
             returnWeatherMoment(dto: dto)
-            storageClient.save(key: "File", data: dto)
+            storageClient.save(key: HomeInteractor.fileName, data: dto)
             return
         default:
             return

@@ -35,7 +35,7 @@ class StorageClient: StorageClientProtocol {
             
             return try JSONDecoder().decode(T.self, from: data)
             
-        } catch {
+        } catch (let error){
             print("Error in file reading")
             return nil
         }
