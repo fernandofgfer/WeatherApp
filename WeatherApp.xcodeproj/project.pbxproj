@@ -30,6 +30,7 @@
 		07B3A2AD2634664000DE8890 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2AC2634664000DE8890 /* Date+Utils.swift */; };
 		07B3A2B22634684D00DE8890 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2B12634684D00DE8890 /* UIViewController+Utils.swift */; };
 		07B3A2B826346CE100DE8890 /* WeatherColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2B726346CE100DE8890 /* WeatherColors.swift */; };
+		07B3A2BF26356EA600DE8890 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2BE26356EA600DE8890 /* HomePresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		07B3A2AC2634664000DE8890 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		07B3A2B12634684D00DE8890 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		07B3A2B726346CE100DE8890 /* WeatherColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherColors.swift; sourceTree = "<group>"; };
+		07B3A2BE26356EA600DE8890 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 		076812CF2631B5300023448F /* WeatherAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				07B3A2BC26356E7900DE8890 /* Home */,
 				076812D02631B5300023448F /* WeatherAppTests.swift */,
 				076812D22631B5300023448F /* Info.plist */,
 			);
@@ -275,6 +278,22 @@
 				07B3A2B726346CE100DE8890 /* WeatherColors.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		07B3A2BC26356E7900DE8890 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				07B3A2BD26356E8000DE8890 /* Presenter */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		07B3A2BD26356E8000DE8890 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				07B3A2BE26356EA600DE8890 /* HomePresenterTests.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				076812D12631B5300023448F /* WeatherAppTests.swift in Sources */,
+				07B3A2BF26356EA600DE8890 /* HomePresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
