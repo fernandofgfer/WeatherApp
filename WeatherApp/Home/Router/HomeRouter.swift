@@ -20,6 +20,7 @@ class HomeRouter: HomeRouterProtocol {
     }
     
     func pushToDetailedView(weatherMomentList: [WeatherMoment]) {
-        //view?.pushView(<#T##view: Presentable##Presentable#>, animated: <#T##Bool#>)
+        let vc = DetailAssembler.provide(weatherMomentList: weatherMomentList)
+        view?.pushView(vc, animated: true)
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol NavigableView: class {
+protocol NavigableView: AnyObject {
     func pushView(_ view: Presentable, animated: Bool)
     func presentView(_ view: Presentable, animated: Bool)
     func presentView(_ view: Presentable, animated: Bool, completion: (() -> Void)?)

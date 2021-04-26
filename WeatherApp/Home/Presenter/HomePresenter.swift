@@ -21,7 +21,7 @@ protocol HomeInteractorOutputProtocol: AnyObject {
 
 class HomePresenter: HomePresenterProtocol {
     
-    var view: HomeViewProtocol?
+    weak var view: HomeViewProtocol?
     
     // MARK: - Private
     private let interactor: HomeInteractorProtocol
@@ -51,7 +51,7 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func cellPressed(index: Int) {
-        let weatherMomentForADay =  weatherMomentList.filter { $0.day == homeViewModelList[index - 1].day }
+        let weatherMomentForADay =  weatherMomentList.filter { $0.day == homeViewModelList[index].day }
         router.pushToDetailedView(weatherMomentList: weatherMomentForADay)
         // .sort(by: { $0.day < $1.day })
     }

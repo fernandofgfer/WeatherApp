@@ -36,6 +36,11 @@
 		07B3A2D92636FD9A00DE8890 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2D82636FD9A00DE8890 /* Utils.swift */; };
 		07B3A2DE263700EC00DE8890 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2DD263700EC00DE8890 /* HomeRouter.swift */; };
 		07B3A2E32637032000DE8890 /* NavigableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2E22637032000DE8890 /* NavigableView.swift */; };
+		07B3A2EC2637057F00DE8890 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2EB2637057F00DE8890 /* DetailViewController.swift */; };
+		07B3A2F1263708D000DE8890 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2F0263708D000DE8890 /* DetailPresenter.swift */; };
+		07B3A2F726370AA200DE8890 /* SelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2F626370AA200DE8890 /* SelectorViewModel.swift */; };
+		07B3A2FF26370C6100DE8890 /* SelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2FE26370C6100DE8890 /* SelectorCell.swift */; };
+		07B3A30426370EAD00DE8890 /* DetailAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A30326370EAD00DE8890 /* DetailAssembler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +96,11 @@
 		07B3A2D82636FD9A00DE8890 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		07B3A2DD263700EC00DE8890 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		07B3A2E22637032000DE8890 /* NavigableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigableView.swift; sourceTree = "<group>"; };
+		07B3A2EB2637057F00DE8890 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		07B3A2F0263708D000DE8890 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		07B3A2F626370AA200DE8890 /* SelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorViewModel.swift; sourceTree = "<group>"; };
+		07B3A2FE26370C6100DE8890 /* SelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorCell.swift; sourceTree = "<group>"; };
+		07B3A30326370EAD00DE8890 /* DetailAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAssembler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +223,7 @@
 		076812B82631B52F0023448F /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				07B3A2E72637053D00DE8890 /* Detail */,
 				07B3A2B626346CC700DE8890 /* Resources */,
 				07B3A2AB2634662500DE8890 /* Utils */,
 				075757DF2631DE5400176365 /* Home */,
@@ -325,6 +336,50 @@
 				07B3A2D82636FD9A00DE8890 /* Utils.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		07B3A2E72637053D00DE8890 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				07B3A2EA2637056C00DE8890 /* Assembler */,
+				07B3A2E92637056300DE8890 /* Presenter */,
+				07B3A2E82637055B00DE8890 /* View */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		07B3A2E82637055B00DE8890 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07B3A2F526370A9300DE8890 /* SelectorViewModel */,
+				07B3A2EB2637057F00DE8890 /* DetailViewController.swift */,
+				07B3A2FE26370C6100DE8890 /* SelectorCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		07B3A2E92637056300DE8890 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				07B3A2F0263708D000DE8890 /* DetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		07B3A2EA2637056C00DE8890 /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				07B3A30326370EAD00DE8890 /* DetailAssembler.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		07B3A2F526370A9300DE8890 /* SelectorViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				07B3A2F626370AA200DE8890 /* SelectorViewModel.swift */,
+			);
+			path = SelectorViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,12 +512,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B3A30426370EAD00DE8890 /* DetailAssembler.swift in Sources */,
 				073A82F72631CE730024B0A6 /* WeatherDataManager.swift in Sources */,
 				076812BE2631B52F0023448F /* ViewController.swift in Sources */,
 				07B3A2B22634684D00DE8890 /* UIViewController+Utils.swift in Sources */,
 				075757DB2631D60000176365 /* StorageClient.swift in Sources */,
 				07B3A2DE263700EC00DE8890 /* HomeRouter.swift in Sources */,
 				075757E62631DEB400176365 /* HomeInteractor.swift in Sources */,
+				07B3A2EC2637057F00DE8890 /* DetailViewController.swift in Sources */,
+				07B3A2F726370AA200DE8890 /* SelectorViewModel.swift in Sources */,
 				07B3A2A72633175D00DE8890 /* HomeCell.swift in Sources */,
 				07B3A2AD2634664000DE8890 /* Date+Utils.swift in Sources */,
 				075757F126320A6A00176365 /* WeatherMoment.swift in Sources */,
@@ -471,11 +529,13 @@
 				07B3A2982633031400DE8890 /* HomeViewModel.swift in Sources */,
 				076813072631C9DD0023448F /* WeatherDTO.swift in Sources */,
 				075757EB2631FE2600176365 /* HomePresenter.swift in Sources */,
+				07B3A2F1263708D000DE8890 /* DetailPresenter.swift in Sources */,
 				076812BA2631B52F0023448F /* AppDelegate.swift in Sources */,
 				07B3A2A22633140F00DE8890 /* HomeAssembler.swift in Sources */,
 				07B3A29D26330F3900DE8890 /* HomeViewController.swift in Sources */,
 				07B3A2B826346CE100DE8890 /* WeatherColors.swift in Sources */,
 				07B3A2E32637032000DE8890 /* NavigableView.swift in Sources */,
+				07B3A2FF26370C6100DE8890 /* SelectorCell.swift in Sources */,
 				076812BC2631B52F0023448F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
