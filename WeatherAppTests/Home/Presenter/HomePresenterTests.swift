@@ -14,13 +14,16 @@ class HomePresenterTests: XCTestCase {
     var interactorMock: HomeInteractorProtocolMock!
     var viewModelFactoryMock: HomeViewModelFactoryProtocolMock!
     var viewMock: HomeViewProtocolMock!
+    var routerMock: HomeRouterMock!
     
     override func setUpWithError() throws {
         super.setUp()
         interactorMock = HomeInteractorProtocolMock()
         viewModelFactoryMock = HomeViewModelFactoryProtocolMock()
+        routerMock = HomeRouterMock()
         sut = HomePresenter(interactor: interactorMock,
-                            homeViewModelFactory: viewModelFactoryMock)
+                            homeViewModelFactory: viewModelFactoryMock,
+                            router: routerMock)
         viewMock = HomeViewProtocolMock(presenter: sut)
         sut.view = viewMock
     }
@@ -83,6 +86,7 @@ class HomeViewProtocolMock: HomeViewProtocol {
 }
 
 class HomeInteractorProtocolMock: HomeInteractorProtocol {
+    var presenter: HomeInteractorOutputProtocol?
     
     var fetchWeatherDataCalled = false
     var fetchWeatherDataCalledCount = 0
@@ -102,5 +106,16 @@ class HomeViewModelFactoryProtocolMock: HomeViewModelFactoryProtocol {
         createViewModelCalled = true
         createViewModelCalledCount += 1
         return []
+    }
+}
+
+class HomeRouterMock: HomeRouterProtocol {
+    
+    var pushToDetailedViewCalled = false
+    var pushToDetailedViewCalledCount = 0
+    
+    func pushToDetailedView(weatherMomentList: [WeatherMoment]) {
+        pushToDetailedViewCalled = true
+        pushToDetailedViewCalledCount += 1
     }
 }

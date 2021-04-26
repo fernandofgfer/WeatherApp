@@ -8,6 +8,7 @@
 import Foundation
 
 protocol HomeInteractorProtocol {
+    var presenter: HomeInteractorOutputProtocol? { get set }
     func fetchWeatherData()
 }
 
@@ -44,10 +45,6 @@ class HomeInteractor: HomeInteractorProtocol {
     
     // MARK: - Business logic
     
-    func fetchStoredData() -> WeatherDTO? {
-        return storageClient.fetch(key: HomeInteractor.fileName)
-    }
-    
     func manageResult(result: Result<WeatherDTO, ApiClientError>) {
         switch result {
         case .success(let dto):
@@ -71,6 +68,9 @@ class HomeInteractor: HomeInteractorProtocol {
         returnWeatherMoment(dto: dto)
     }
     
+    func fetchStoredData() -> WeatherDTO? {
+        return storageClient.fetch(key: HomeInteractor.fileName)
+    }
     
     func returnWeatherMoment(dto: WeatherDTO) {
         presenter?.weatherDataReturned(weather: weatherMomentMapper.map(weatherDTO: dto, city: HomeInteractor.city))

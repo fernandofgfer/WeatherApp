@@ -31,6 +31,11 @@
 		07B3A2B22634684D00DE8890 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2B12634684D00DE8890 /* UIViewController+Utils.swift */; };
 		07B3A2B826346CE100DE8890 /* WeatherColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2B726346CE100DE8890 /* WeatherColors.swift */; };
 		07B3A2BF26356EA600DE8890 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2BE26356EA600DE8890 /* HomePresenterTests.swift */; };
+		07B3A2C82636F7AC00DE8890 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2C72636F7AC00DE8890 /* HomeInteractorTests.swift */; };
+		07B3A2D12636FD3D00DE8890 /* WeatherMomentMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2D02636FD3D00DE8890 /* WeatherMomentMapperTests.swift */; };
+		07B3A2D92636FD9A00DE8890 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2D82636FD9A00DE8890 /* Utils.swift */; };
+		07B3A2DE263700EC00DE8890 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2DD263700EC00DE8890 /* HomeRouter.swift */; };
+		07B3A2E32637032000DE8890 /* NavigableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2E22637032000DE8890 /* NavigableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +86,11 @@
 		07B3A2B12634684D00DE8890 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		07B3A2B726346CE100DE8890 /* WeatherColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherColors.swift; sourceTree = "<group>"; };
 		07B3A2BE26356EA600DE8890 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		07B3A2C72636F7AC00DE8890 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
+		07B3A2D02636FD3D00DE8890 /* WeatherMomentMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMomentMapperTests.swift; sourceTree = "<group>"; };
+		07B3A2D82636FD9A00DE8890 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		07B3A2DD263700EC00DE8890 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		07B3A2E22637032000DE8890 /* NavigableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +168,7 @@
 		075757E32631DE9E00176365 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				07B3A2DD263700EC00DE8890 /* HomeRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -268,6 +279,7 @@
 			children = (
 				07B3A2AC2634664000DE8890 /* Date+Utils.swift */,
 				07B3A2B12634684D00DE8890 /* UIViewController+Utils.swift */,
+				07B3A2E22637032000DE8890 /* NavigableView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -283,6 +295,8 @@
 		07B3A2BC26356E7900DE8890 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				07B3A2CF2636FCC700DE8890 /* Model */,
+				07B3A2C62636F79B00DE8890 /* Interactor */,
 				07B3A2BD26356E8000DE8890 /* Presenter */,
 			);
 			path = Home;
@@ -294,6 +308,23 @@
 				07B3A2BE26356EA600DE8890 /* HomePresenterTests.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		07B3A2C62636F79B00DE8890 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				07B3A2C72636F7AC00DE8890 /* HomeInteractorTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		07B3A2CF2636FCC700DE8890 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07B3A2D02636FD3D00DE8890 /* WeatherMomentMapperTests.swift */,
+				07B3A2D82636FD9A00DE8890 /* Utils.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,6 +461,7 @@
 				076812BE2631B52F0023448F /* ViewController.swift in Sources */,
 				07B3A2B22634684D00DE8890 /* UIViewController+Utils.swift in Sources */,
 				075757DB2631D60000176365 /* StorageClient.swift in Sources */,
+				07B3A2DE263700EC00DE8890 /* HomeRouter.swift in Sources */,
 				075757E62631DEB400176365 /* HomeInteractor.swift in Sources */,
 				07B3A2A72633175D00DE8890 /* HomeCell.swift in Sources */,
 				07B3A2AD2634664000DE8890 /* Date+Utils.swift in Sources */,
@@ -443,6 +475,7 @@
 				07B3A2A22633140F00DE8890 /* HomeAssembler.swift in Sources */,
 				07B3A29D26330F3900DE8890 /* HomeViewController.swift in Sources */,
 				07B3A2B826346CE100DE8890 /* WeatherColors.swift in Sources */,
+				07B3A2E32637032000DE8890 /* NavigableView.swift in Sources */,
 				076812BC2631B52F0023448F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +484,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B3A2D92636FD9A00DE8890 /* Utils.swift in Sources */,
+				07B3A2C82636F7AC00DE8890 /* HomeInteractorTests.swift in Sources */,
+				07B3A2D12636FD3D00DE8890 /* WeatherMomentMapperTests.swift in Sources */,
 				076812D12631B5300023448F /* WeatherAppTests.swift in Sources */,
 				07B3A2BF26356EA600DE8890 /* HomePresenterTests.swift in Sources */,
 			);

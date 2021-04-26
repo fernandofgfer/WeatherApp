@@ -11,6 +11,7 @@ protocol HomePresenterProtocol {
     var view: HomeViewProtocol? { get set }
     func viewDidLoad()
     func configureCell(index: Int, cell: HomeCellProtocol?)
+    func cellPressed(index: Int)
 }
 
 protocol HomeInteractorOutputProtocol: AnyObject {
@@ -27,13 +28,16 @@ class HomePresenter: HomePresenterProtocol {
     private let homeViewModelFactory: HomeViewModelFactoryProtocol
     private var weatherMomentList: [WeatherMoment] = []
     private var homeViewModelList: [HomeViewModel] = []
+    private var router: HomeRouterProtocol
     
     // MARK: - Custom init
     
     init(interactor: HomeInteractorProtocol,
-         homeViewModelFactory: HomeViewModelFactoryProtocol) {
+         homeViewModelFactory: HomeViewModelFactoryProtocol,
+         router: HomeRouterProtocol) {
         self.interactor = interactor
         self.homeViewModelFactory = homeViewModelFactory
+        self.router = router
     }
     
     // MARK: - HomePresenterProtocol
@@ -44,6 +48,12 @@ class HomePresenter: HomePresenterProtocol {
     
     func configureCell(index: Int, cell: HomeCellProtocol?) {
         cell?.loadData(viewModel: homeViewModelList[index])
+    }
+    
+    func cellPressed(index: Int) {
+        let weatherMomentForADay =  weatherMomentList.filter { $0.day == homeViewModelList[index - 1].day }
+        router.pushToDetailedView(weatherMomentList: weatherMomentForADay)
+        // .sort(by: { $0.day < $1.day })
     }
     
     // MARK: - Private methods

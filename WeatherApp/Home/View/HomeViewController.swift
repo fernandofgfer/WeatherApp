@@ -89,6 +89,6 @@ extension HomeViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        presenter.cellPressed(index: indexPath.row)
     }
 }

@@ -9,16 +9,16 @@ import Foundation
 import UIKit
 
 class HomeAssembler {
-    
-    func provide() -> UIViewController {
+
+    func provide(view: NavigableView?) -> UIViewController {
         
         let client = URLSession.init(configuration: URLSessionConfiguration.default)
         let apiClient = ApiClient(urlSession: client)
         let dataManager = WeatherDataManager(apiClient: apiClient)
         
-        
+        let router = HomeRouter(view: view)
         let interactor = HomeInteractor(weatherDataManager: dataManager, storageClient: StorageClient(), weatherMomentMapper: WeatherMomentMapper())
-        let presenter = HomePresenter(interactor: interactor, homeViewModelFactory: HomeViewModelFactory())
+        let presenter = HomePresenter(interactor: interactor, homeViewModelFactory: HomeViewModelFactory(), router: router)
         let viewController = HomeViewController(presenter: presenter)
         interactor.presenter = presenter
         presenter.view = viewController
