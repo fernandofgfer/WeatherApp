@@ -11,6 +11,7 @@ import UIKit
 protocol DetailViewProtocol: AnyObject {
     var presenter: DetailPresenterProtocol { get }
     func reloadTable(numberOfCells: Int)
+    func setInfoView(infoViewModel: InfoViewModel)
 }
 
 class DetailViewController: UIViewController, DetailViewProtocol {
@@ -37,10 +38,47 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         var collection = UICollectionView(frame: .zero, collectionViewLayout: flow)
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.allowsSelection = true
-        collection.backgroundColor = .red
         collection.isScrollEnabled = true
+        collection.backgroundColor = .clear
         return collection
     }()
+    
+    fileprivate lazy var currentTemperatureView: InfoView = {
+        let infoView = InfoView()
+        infoView.translatesAutoresizingMaskIntoConstraints = false
+        return infoView
+    }()
+    
+    fileprivate lazy var minTemperatureView: InfoView = {
+        let infoView = InfoView()
+        infoView.translatesAutoresizingMaskIntoConstraints = false
+        return infoView
+    }()
+    
+    fileprivate lazy var maxTemperatureView: InfoView = {
+        let infoView = InfoView()
+        infoView.translatesAutoresizingMaskIntoConstraints = false
+        return infoView
+    }()
+    
+    fileprivate lazy var feelsLikeTemperatureView: InfoView = {
+        let infoView = InfoView()
+        infoView.translatesAutoresizingMaskIntoConstraints = false
+        return infoView
+    }()
+    
+    fileprivate lazy var pressureView: InfoView = {
+        let infoView = InfoView()
+        infoView.translatesAutoresizingMaskIntoConstraints = false
+        return infoView
+    }()
+    
+    fileprivate lazy var humidityView: InfoView = {
+        let infoView = InfoView()
+        infoView.translatesAutoresizingMaskIntoConstraints = false
+        return infoView
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +88,15 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     }
     
     func setupViews() {
+        view.backgroundColor = WeatherColors.backgroundMainColor
+        
         view.addSubview(collection)
+        view.addSubview(currentTemperatureView)
+        view.addSubview(minTemperatureView)
+        view.addSubview(maxTemperatureView)
+        view.addSubview(feelsLikeTemperatureView)
+        view.addSubview(pressureView)
+        view.addSubview(humidityView)
         collection.delegate = self
         collection.dataSource = self
         collection.register(SelectorCell.self, forCellWithReuseIdentifier: String(describing: SelectorCell.self))
@@ -60,10 +106,39 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         NSLayoutConstraint.activate([
             
             collection.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
-            collection.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-            collection.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            collection.heightAnchor.constraint(equalToConstant: 200)
+            collection.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collection.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collection.heightAnchor.constraint(equalToConstant: 200),
             
+            currentTemperatureView.topAnchor.constraint(equalTo: collection.bottomAnchor, constant: 20),
+            currentTemperatureView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            currentTemperatureView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            currentTemperatureView.heightAnchor.constraint(equalToConstant: 50),
+            
+            minTemperatureView.topAnchor.constraint(equalTo: currentTemperatureView.bottomAnchor, constant: 10),
+            minTemperatureView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            minTemperatureView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            minTemperatureView.heightAnchor.constraint(equalToConstant: 50),
+            
+            maxTemperatureView.topAnchor.constraint(equalTo: minTemperatureView.bottomAnchor, constant: 10),
+            maxTemperatureView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            maxTemperatureView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            maxTemperatureView.heightAnchor.constraint(equalToConstant: 50),
+            
+            feelsLikeTemperatureView.topAnchor.constraint(equalTo: maxTemperatureView.bottomAnchor, constant: 10),
+            feelsLikeTemperatureView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            feelsLikeTemperatureView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            feelsLikeTemperatureView.heightAnchor.constraint(equalToConstant: 50),
+            
+            pressureView.topAnchor.constraint(equalTo: feelsLikeTemperatureView.bottomAnchor, constant: 10),
+            pressureView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            pressureView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            pressureView.heightAnchor.constraint(equalToConstant: 50),
+            
+            humidityView.topAnchor.constraint(equalTo: pressureView.bottomAnchor, constant: 10),
+            humidityView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            humidityView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            humidityView.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
     
@@ -72,6 +147,15 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         DispatchQueue.main.async {
             self.collection.reloadData()
         }
+    }
+    
+    func setInfoView(infoViewModel: InfoViewModel) {
+        currentTemperatureView.setData(title: "Current Temperature", data: infoViewModel.currentTemperature)
+        minTemperatureView.setData(title: "Minimun temperature", data: infoViewModel.minTemperature)
+        maxTemperatureView.setData(title: "Maximun temparature", data: infoViewModel.maxTemperature)
+        feelsLikeTemperatureView.setData(title: "Feels like temperature", data: infoViewModel.feelsLikeTemperature)
+        pressureView.setData(title: "Pressure", data: infoViewModel.pression)
+        humidityView.setData(title: "Humidity", data: infoViewModel.humidity)
     }
 
 }
@@ -89,6 +173,10 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: SelectorCell.self), for: indexPath)
         presenter.configureCell(index: indexPath.row, cell: cell as? SelectorCellProtocol)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.cellPressed(index: indexPath.row)
     }
 }
 

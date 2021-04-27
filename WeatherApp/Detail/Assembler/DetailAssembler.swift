@@ -14,7 +14,7 @@ class DetailAssembler {
         
         
         let presenter = DetailPresenter(weatherMomentList: weatherMomentList,
-                                        selectorViewModelMapper: SelectorViewModelMapper())
+                                        selectorViewModelMapper: SelectorViewModelMapper(), infoViewModelMapper: InfoViewModelMapper())
         let vc = DetailViewController(presenter: presenter)
         presenter.view = vc
         return vc

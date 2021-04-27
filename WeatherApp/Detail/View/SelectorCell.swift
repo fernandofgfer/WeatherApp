@@ -50,6 +50,7 @@ class SelectorCell: UICollectionViewCell {
         super.init(frame: frame)
         setupView()
         setupConstraints()
+        setupStyles()
     }
     
     required init?(coder: NSCoder) {
@@ -72,6 +73,20 @@ class SelectorCell: UICollectionViewCell {
             stackView.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor),
             stackView.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
         ])
+    }
+    
+    private func setupStyles() {
+        // Border
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.gray.cgColor
+        layer.cornerRadius = 10
+        
+        
+        // Shadow
+        layer.shadowOffset = .zero
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.23
+        layer.shadowRadius = 4
     }
 }
 
