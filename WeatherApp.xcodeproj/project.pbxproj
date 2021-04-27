@@ -13,6 +13,7 @@
 		072906502638AFEB0093082B /* HomeViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729064F2638AFEB0093082B /* HomeViewModelMapperTests.swift */; };
 		072906542638B31A0093082B /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072906532638B31A0093082B /* DetailPresenterTests.swift */; };
 		072906572638B7280093082B /* InfoViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072906562638B7280093082B /* InfoViewModelMapperTests.swift */; };
+		072906592638B8370093082B /* SelectotrViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072906582638B8370093082B /* SelectotrViewModelMapperTests.swift */; };
 		073A82F72631CE730024B0A6 /* WeatherDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A82F62631CE730024B0A6 /* WeatherDataManager.swift */; };
 		0755F75D263800210046A69A /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0755F75C263800210046A69A /* InfoView.swift */; };
 		075757DB2631D60000176365 /* StorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075757DA2631D60000176365 /* StorageClient.swift */; };
@@ -75,6 +76,7 @@
 		0729064F2638AFEB0093082B /* HomeViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelMapperTests.swift; sourceTree = "<group>"; };
 		072906532638B31A0093082B /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
 		072906562638B7280093082B /* InfoViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModelMapperTests.swift; sourceTree = "<group>"; };
+		072906582638B8370093082B /* SelectotrViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectotrViewModelMapperTests.swift; sourceTree = "<group>"; };
 		073A82F62631CE730024B0A6 /* WeatherDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataManager.swift; sourceTree = "<group>"; };
 		0755F75C263800210046A69A /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		075757DA2631D60000176365 /* StorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageClient.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				072906562638B7280093082B /* InfoViewModelMapperTests.swift */,
+				072906582638B8370093082B /* SelectotrViewModelMapperTests.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -776,6 +779,7 @@
 				07B3A2D92636FD9A00DE8890 /* Utils.swift in Sources */,
 				072906542638B31A0093082B /* DetailPresenterTests.swift in Sources */,
 				07B3A2C82636F7AC00DE8890 /* HomeInteractorTests.swift in Sources */,
+				072906592638B8370093082B /* SelectotrViewModelMapperTests.swift in Sources */,
 				07B3A2D12636FD3D00DE8890 /* WeatherMomentMapperTests.swift in Sources */,
 				072906502638AFEB0093082B /* HomeViewModelMapperTests.swift in Sources */,
 				07B3A2BF26356EA600DE8890 /* HomePresenterTests.swift in Sources */,
