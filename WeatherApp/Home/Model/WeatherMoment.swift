@@ -11,6 +11,7 @@ struct WeatherMoment: Hashable {
     let city: String
     let day: Int
     let hour: Int
+    let timestamp: Double
     let conditions: WeatherConditions
     let status: Status
     

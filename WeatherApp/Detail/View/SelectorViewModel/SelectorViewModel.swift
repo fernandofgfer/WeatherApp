@@ -8,9 +8,16 @@
 import Foundation
 
 struct SelectorViewModel {
-    let day: Int
-    let hour: Int
+    let timestamp: Double
+    let description: String
     let image: String
+    
+    func getFormattedHour() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a"
+        let date = Date(timeIntervalSince1970: timestamp)
+        return dateFormatter.string(from: date)
+    }
 }
 
 protocol SelectorViewModelMapperProtocol {
@@ -19,6 +26,8 @@ protocol SelectorViewModelMapperProtocol {
 
 class SelectorViewModelMapper: SelectorViewModelMapperProtocol {
     func map(weatherMomentList: [WeatherMoment]) -> [SelectorViewModel] {
-        return weatherMomentList.map { SelectorViewModel(day: $0.day, hour: $0.hour, image: $0.status.icon) }
+        return weatherMomentList.map { SelectorViewModel(timestamp: $0.timestamp,
+                                                         description: $0.status.description,
+                                                         image: $0.status.icon) }
     }
 }

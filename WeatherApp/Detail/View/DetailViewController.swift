@@ -12,6 +12,7 @@ protocol DetailViewProtocol: AnyObject {
     var presenter: DetailPresenterProtocol { get }
     func reloadTable(numberOfCells: Int)
     func setInfoView(infoViewModel: InfoViewModel)
+    func setTitle(title: String?)
 }
 
 class DetailViewController: UIViewController, DetailViewProtocol {
@@ -106,8 +107,8 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         NSLayoutConstraint.activate([
             
             collection.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
-            collection.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collection.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collection.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            collection.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             collection.heightAnchor.constraint(equalToConstant: 200),
             
             currentTemperatureView.topAnchor.constraint(equalTo: collection.bottomAnchor, constant: 20),
@@ -148,6 +149,10 @@ class DetailViewController: UIViewController, DetailViewProtocol {
             self.collection.reloadData()
             self.collection.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .left)
         }
+    }
+    
+    func setTitle(title: String?) {
+        self.title = title
     }
     
     func setInfoView(infoViewModel: InfoViewModel) {

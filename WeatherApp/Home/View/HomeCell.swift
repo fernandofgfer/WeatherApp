@@ -134,7 +134,7 @@ class HomeCell: UITableViewCell {
 extension HomeCell: HomeCellProtocol {
     func loadData(viewModel: HomeViewModel) {
         cityLabel.text = viewModel.city
-        dateLabel.text = "\(String(viewModel.day)), \(Date().month)"
+        dateLabel.text = viewModel.getFormattedDate()
         descriptionLabel.text = viewModel.description.capitalized
         weatherImage.sd_setImage(with: URL(string: viewModel.image), completed: nil)
     }

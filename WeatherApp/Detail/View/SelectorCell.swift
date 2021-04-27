@@ -118,8 +118,8 @@ class SelectorCell: UICollectionViewCell {
 
 extension SelectorCell: SelectorCellProtocol {
     func loadData(viewModel: SelectorViewModel) {
-        dateLabel.text = String(viewModel.day)
-        hourLabel.text = String(viewModel.hour)
+        dateLabel.text = viewModel.getFormattedHour()
+        hourLabel.text = viewModel.description
         weatherImage.sd_setImage(with: URL(string: viewModel.image), completed: nil)
     }
 }

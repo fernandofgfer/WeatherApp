@@ -19,6 +19,7 @@ class WeatherMomentMapper: WeatherMomentMapperProtocol {
             return WeatherMoment(city: city,
                                  day: dates.day ?? 0,
                                  hour: dates.hour ?? 0,
+                                 timestamp: weather.dt,
                                  conditions: getWeatherConditions(main: weather.main),
                                  status: getWeatherStatus(weather: weather.weather.first))
         }
