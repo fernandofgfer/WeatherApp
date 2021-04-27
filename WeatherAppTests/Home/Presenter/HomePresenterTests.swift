@@ -44,6 +44,33 @@ class HomePresenterTests: XCTestCase {
         XCTAssertEqual(1, interactorMock.fetchWeatherDataCallsCount)
     }
     
+    func testConfigureCell_shoudlCallLoadData() {
+        // Given
+        let cell = HomeCellProtocolMock()
+        viewModelFactoryMock.createViewModelWeatherMomentListReturnValue = [WeatherAppUtils.homeViewModel]
+        sut.weatherDataReturned(weather: [])
+        
+        // When
+        sut.configureCell(index: 0, cell: cell)
+        
+        // Then
+        XCTAssertEqual(1, cell.loadDataViewModelCallsCount)
+    }
+    
+    func testCellPressed_shouldCallPushToDetailedView_withProperlyData() {
+        // Given
+        let weatherMoment = WeatherAppUtils.weatherMoment
+        viewModelFactoryMock.createViewModelWeatherMomentListReturnValue = [WeatherAppUtils.homeViewModel]
+        sut.weatherDataReturned(weather: [weatherMoment])
+        
+        // When
+        sut.cellPressed(index: 0)
+        
+        // Then
+        XCTAssertEqual(1, routerMock.pushToDetailedViewWeatherMomentListCallsCount)
+        XCTAssertEqual(weatherMoment, routerMock.pushToDetailedViewWeatherMomentListReceivedWeatherMomentList?.first)
+    }
+        
     func testWeatherDataReturned_shouldCallReloadTable() {
         // Given
         viewModelFactoryMock.createViewModelWeatherMomentListReturnValue = []

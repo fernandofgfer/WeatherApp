@@ -135,6 +135,26 @@ class DetailViewProtocolMock: DetailViewProtocol {
     }
 
 }
+class HomeCellProtocolMock: HomeCellProtocol {
+
+    //MARK: - loadData
+
+    var loadDataViewModelCallsCount = 0
+    var loadDataViewModelCalled: Bool {
+        return loadDataViewModelCallsCount > 0
+    }
+    var loadDataViewModelReceivedViewModel: HomeViewModel?
+    var loadDataViewModelReceivedInvocations: [HomeViewModel] = []
+    var loadDataViewModelClosure: ((HomeViewModel) -> Void)?
+
+    func loadData(viewModel: HomeViewModel) {
+        loadDataViewModelCallsCount += 1
+        loadDataViewModelReceivedViewModel = viewModel
+        loadDataViewModelReceivedInvocations.append(viewModel)
+        loadDataViewModelClosure?(viewModel)
+    }
+
+}
 class HomeInteractorOutputProtocolMock: HomeInteractorOutputProtocol {
 
     //MARK: - weatherDataReturned

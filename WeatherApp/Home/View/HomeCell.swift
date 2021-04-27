@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SDWebImage
 
+/// sourcery: AutoMockable
 protocol HomeCellProtocol {
     func loadData(viewModel: HomeViewModel)
 }

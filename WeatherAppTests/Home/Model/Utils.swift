@@ -30,4 +30,8 @@ class WeatherAppUtils {
                                                                          description: "",
                                                                          icon: "")])]
     static let dto = WeatherDTO(list: list)
+    
+    static let weatherMoment = WeatherMoment(city: "PARIS", day: 2, hour: 2, timestamp: 1619449200, conditions: WeatherMoment.WeatherConditions(currentTemperature: 1, minimumTemparature: 1, maximumTemperature: 1, feelsLike: 1, pressure: 1, humidity: 1), status: WeatherMoment.Status(description: "cloudy", icon: "x"))
+    
+    static let homeViewModel = HomeViewModel(city: "PARIS", day: 2, timestamp: 1619449200, image: "x", description: "cloudy")
 }

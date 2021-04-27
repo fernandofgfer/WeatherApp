@@ -18,7 +18,7 @@ class SelectorCell: UICollectionViewCell {
     fileprivate lazy var dateLabel: UILabel = {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 10)
+        label.font = .boldSystemFont(ofSize: 20)
         label.textColor = .white
         return label
     }()
@@ -26,7 +26,9 @@ class SelectorCell: UICollectionViewCell {
     fileprivate lazy var hourLabel: UILabel = {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 10)
+        label.font = .boldSystemFont(ofSize: 15)
+        label.numberOfLines = 2
+        label.textAlignment = .center
         label.textColor = .white
         return label
     }()
@@ -82,7 +84,7 @@ class SelectorCell: UICollectionViewCell {
             stackView.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
-            stackView.heightAnchor.constraint(equalToConstant: 50.0),
+            stackView.heightAnchor.constraint(equalToConstant: 60.0),
             
             weatherImage.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10.0),
             weatherImage.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
@@ -104,7 +106,7 @@ class SelectorCell: UICollectionViewCell {
         layer.shadowOpacity = 0.23
         layer.shadowRadius = 4
         
-        backgroundColor = .gray.withAlphaComponent(0.5)
+        backgroundColor = UIColor(red: 94/255, green: 159/255, blue: 167/255, alpha: 1)
     }
     
     private func setHighlitghted() {
