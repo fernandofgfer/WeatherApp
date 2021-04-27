@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// sourcery: AutoMockable
 protocol HomeInteractorProtocol {
     var presenter: HomeInteractorOutputProtocol? { get set }
     func fetchWeatherData()

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// sourcery: AutoMockable
 protocol HomeRouterProtocol {
     func pushToDetailedView(weatherMomentList: [WeatherMoment])
 }

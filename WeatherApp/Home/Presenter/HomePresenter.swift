@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// sourcery: AutoMockable
 protocol HomePresenterProtocol {
     var view: HomeViewProtocol? { get set }
     func viewDidLoad()
@@ -14,6 +15,7 @@ protocol HomePresenterProtocol {
     func cellPressed(index: Int)
 }
 
+/// sourcery: AutoMockable
 protocol HomeInteractorOutputProtocol: AnyObject {
     func weatherDataReturned(weather: [WeatherMoment])
     func showError(message: String)

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// sourcery: AutoMockable
 protocol WeatherMomentMapperProtocol {
     func map(weatherDTO: WeatherDTO, city: String) -> [WeatherMoment]
 }

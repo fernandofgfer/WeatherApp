@@ -11,16 +11,16 @@ import XCTest
 class HomeInteractorTests: XCTestCase {
     
     var sut: HomeInteractor!
-    var dataManagerMock: WeatherDataManagerMock!
-    var storageClientMock: StorageClientMock!
-    var mapperMock: WeatherMomentDataMapperMock!
-    var presenter: HomeInteractorOutputMock!
+    var dataManagerMock: WeatherDataManagerProtocolMock!
+    var storageClientMock: StorageClientProtocolMock!
+    var mapperMock: WeatherMomentMapperProtocolMock!
+    var presenter: HomeInteractorOutputProtocolMock!
 
     override func setUpWithError() throws {
-        dataManagerMock = WeatherDataManagerMock()
-        storageClientMock = StorageClientMock()
-        mapperMock = WeatherMomentDataMapperMock()
-        presenter = HomeInteractorOutputMock()
+        dataManagerMock = WeatherDataManagerProtocolMock()
+        storageClientMock = StorageClientProtocolMock()
+        mapperMock = WeatherMomentMapperProtocolMock()
+        presenter = HomeInteractorOutputProtocolMock()
         sut =  HomeInteractor(weatherDataManager: dataManagerMock,
                               storageClient: storageClientMock,
                               weatherMomentMapper: mapperMock)
@@ -43,19 +43,20 @@ class HomeInteractorTests: XCTestCase {
         sut.fetchWeatherData()
         
         // Then
-        XCTAssertEqual(1, dataManagerMock.fetchCalledCount)
+        XCTAssertEqual(1, dataManagerMock.fetchLocationCompletionCallsCount)
     }
     
     func testSuccessResponse_shouldSaveDataAndReturnit() {
         // Given
         let dto = WeatherDTO(list: [])
+        mapperMock.mapWeatherDTOCityReturnValue = []
         
         // When
         sut.successResponse(dto: dto)
         
         // Then
-        XCTAssertEqual(1, storageClientMock.saveCalledCount)
-        XCTAssertEqual(1, presenter.weatherDataReturnedCalledCount)
+        XCTAssertEqual(1, storageClientMock.saveCallsCount)
+        XCTAssertEqual(1, presenter.weatherDataReturnedWeatherCallsCount)
     }
     
     func testFailureResponse_withoutDataSaved_shouldCallShowError() {
@@ -63,70 +64,22 @@ class HomeInteractorTests: XCTestCase {
         sut.failureResponse(error: .noData)
         
         // Then
-        XCTAssertEqual(1, presenter.showErrorCalledCount)
+        XCTAssertEqual(1, presenter.showErrorMessageCallsCount)
     }
     
 }
 
 
-class WeatherDataManagerMock: WeatherDataManagerProtocol {
-    
-    var fetchCalled = false
-    var fetchCalledCount = 0
-    
-    func fetch(location: String, completion: @escaping (Result<WeatherDTO, ApiClientError>) -> Void) {
-        fetchCalled = true
-        fetchCalledCount += 1
-    }
-}
-
-class StorageClientMock: StorageClientProtocol {
-    
-    var saveCalled = false
-    var saveCalledCount = 0
-    var fetchCalled = false
-    var fetchCalledCount = 0
+class StorageClientProtocolMock: StorageClientProtocol {
+    var saveCallsCount = 0
+    var fetchCallsCount = 0
     
     func save<T>(key: String, data: T) where T : Decodable, T : Encodable {
-        saveCalled = true
-        saveCalledCount += 1
+        saveCallsCount += 1
     }
     
     func fetch<T>(key: String) -> T? where T : Decodable, T : Encodable {
-        fetchCalled = true
-        fetchCalledCount += 1
+        fetchCallsCount += 1
         return T.self as? T
     }
-}
-
-class WeatherMomentDataMapperMock: WeatherMomentMapperProtocol {
-    
-    var mapCalled = false
-    var mapCalledCount = 0
-    
-    func map(weatherDTO: WeatherDTO, city: String) -> [WeatherMoment] {
-        mapCalled = true
-        mapCalledCount += 1
-        return []
-    }
-}
-
-class HomeInteractorOutputMock: HomeInteractorOutputProtocol {
-    
-    var weatherDataReturnedCalled = false
-    var weatherDataReturnedCalledCount = 0
-    var showErrorCalled = false
-    var showErrorCalledCount = 0
-    
-    func weatherDataReturned(weather: [WeatherMoment]) {
-        weatherDataReturnedCalled = true
-        weatherDataReturnedCalledCount += 1
-    }
-    
-    func showError(message: String) {
-        showErrorCalled = true
-        showErrorCalledCount += 1
-    }
-    
-    
 }

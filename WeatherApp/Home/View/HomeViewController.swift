@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+/// sourcery: AutoMockable
 protocol HomeViewProtocol: AnyObject {
     var presenter: HomePresenterProtocol { get }
     func reloadTable(numberOfCells: Int)

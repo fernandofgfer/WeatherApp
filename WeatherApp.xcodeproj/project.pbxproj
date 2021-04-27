@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		00178983C32D14E9227D285B /* Pods_WeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95852120AC92DD0AADA4E607 /* Pods_WeatherAppTests.framework */; };
+		0729064D263872280093082B /* AutoEquatable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729064B263872280093082B /* AutoEquatable.generated.swift */; };
+		0729064E263872280093082B /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729064C263872280093082B /* AutoMockable.generated.swift */; };
 		073A82F72631CE730024B0A6 /* WeatherDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A82F62631CE730024B0A6 /* WeatherDataManager.swift */; };
 		0755F75D263800210046A69A /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0755F75C263800210046A69A /* InfoView.swift */; };
 		075757DB2631D60000176365 /* StorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075757DA2631D60000176365 /* StorageClient.swift */; };
@@ -66,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0729064B263872280093082B /* AutoEquatable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoEquatable.generated.swift; sourceTree = "<group>"; };
+		0729064C263872280093082B /* AutoMockable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
 		073A82F62631CE730024B0A6 /* WeatherDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataManager.swift; sourceTree = "<group>"; };
 		0755F75C263800210046A69A /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		075757DA2631D60000176365 /* StorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageClient.swift; sourceTree = "<group>"; };
@@ -147,6 +151,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0729064A263872140093082B /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				0729064B263872280093082B /* AutoEquatable.generated.swift */,
+				0729064C263872280093082B /* AutoMockable.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		075757D92631D5EE00176365 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +278,7 @@
 		076812CF2631B5300023448F /* WeatherAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				0729064A263872140093082B /* Generated */,
 				07B3A2BC26356E7900DE8890 /* Home */,
 				076812D02631B5300023448F /* WeatherAppTests.swift */,
 				076812D22631B5300023448F /* Info.plist */,
@@ -433,7 +447,6 @@
 				E93A0685D75C12B7A47F8569 /* Pods-WeatherAppTests.debug.xcconfig */,
 				C69007DBE591A5DA56E40128 /* Pods-WeatherAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -449,6 +462,7 @@
 				076812B32631B52F0023448F /* Frameworks */,
 				076812B42631B52F0023448F /* Resources */,
 				8426AA34F285F34745F8ABE2 /* [CP] Embed Pods Frameworks */,
+				0729064426386ABB0093082B /* Sourcery */,
 			);
 			buildRules = (
 			);
@@ -568,6 +582,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0729064426386ABB0093082B /* Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Sourcery;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh \"${PROJECT_DIR}/Tools/sourcery.sh\"\n";
+		};
 		0B61E90CA61A86ABCB1E9F86 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -709,6 +741,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0729064D263872280093082B /* AutoEquatable.generated.swift in Sources */,
+				0729064E263872280093082B /* AutoMockable.generated.swift in Sources */,
 				07B3A2D92636FD9A00DE8890 /* Utils.swift in Sources */,
 				07B3A2C82636F7AC00DE8890 /* HomeInteractorTests.swift in Sources */,
 				07B3A2D12636FD3D00DE8890 /* WeatherMomentMapperTests.swift in Sources */,

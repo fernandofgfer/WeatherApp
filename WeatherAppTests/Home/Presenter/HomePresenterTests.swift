@@ -14,17 +14,17 @@ class HomePresenterTests: XCTestCase {
     var interactorMock: HomeInteractorProtocolMock!
     var viewModelFactoryMock: HomeViewModelFactoryProtocolMock!
     var viewMock: HomeViewProtocolMock!
-    var routerMock: HomeRouterMock!
+    var routerMock: HomeRouterProtocolMock!
     
     override func setUpWithError() throws {
         super.setUp()
         interactorMock = HomeInteractorProtocolMock()
         viewModelFactoryMock = HomeViewModelFactoryProtocolMock()
-        routerMock = HomeRouterMock()
+        routerMock = HomeRouterProtocolMock()
         sut = HomePresenter(interactor: interactorMock,
                             homeViewModelFactory: viewModelFactoryMock,
                             router: routerMock)
-        viewMock = HomeViewProtocolMock(presenter: sut)
+        viewMock = HomeViewProtocolMock()
         sut.view = viewMock
     }
 
@@ -41,15 +41,18 @@ class HomePresenterTests: XCTestCase {
         sut.viewDidLoad()
         
         // Then
-        XCTAssertEqual(1, interactorMock.fetchWeatherDataCalledCount)
+        XCTAssertEqual(1, interactorMock.fetchWeatherDataCallsCount)
     }
     
     func testWeatherDataReturned_shouldCallReloadTable() {
+        // Given
+        viewModelFactoryMock.createViewModelWeatherMomentListReturnValue = []
+        
         // When
         sut.weatherDataReturned(weather: [])
         
         // Then
-        XCTAssertEqual(1, viewMock.reloadTableCalledCount)
+        XCTAssertEqual(1, viewMock.reloadTableNumberOfCellsCallsCount)
     }
     
     func testShowError_shouldCallShowError() {
@@ -57,65 +60,7 @@ class HomePresenterTests: XCTestCase {
         sut.showError(message: "")
         
         // Then
-        XCTAssertEqual(1, viewMock.showErrorCalledCount)
+        XCTAssertEqual(1, viewMock.showErrorMessageCallsCount)
     }
     
-}
-
-class HomeViewProtocolMock: HomeViewProtocol {
-    var presenter: HomePresenterProtocol
-    
-    var reloadTableCalled = false
-    var reloadTableCalledCount = 0
-    var showErrorCalled = false
-    var showErrorCalledCount = 0
-    
-    init(presenter: HomePresenterProtocol) {
-        self.presenter = presenter
-    }
-    
-    func reloadTable(numberOfCells: Int) {
-        reloadTableCalled = true
-        reloadTableCalledCount += 1
-    }
-    
-    func showError(message: String) {
-        showErrorCalled = true
-        showErrorCalledCount += 1
-    }
-}
-
-class HomeInteractorProtocolMock: HomeInteractorProtocol {
-    var presenter: HomeInteractorOutputProtocol?
-    
-    var fetchWeatherDataCalled = false
-    var fetchWeatherDataCalledCount = 0
-    
-    func fetchWeatherData() {
-        fetchWeatherDataCalled = true
-        fetchWeatherDataCalledCount += 1
-    }
-}
-
-class HomeViewModelFactoryProtocolMock: HomeViewModelFactoryProtocol {
-    
-    var createViewModelCalled = false
-    var createViewModelCalledCount = 0
-    
-    func createViewModel(weatherMomentList: [WeatherMoment]) -> [HomeViewModel] {
-        createViewModelCalled = true
-        createViewModelCalledCount += 1
-        return []
-    }
-}
-
-class HomeRouterMock: HomeRouterProtocol {
-    
-    var pushToDetailedViewCalled = false
-    var pushToDetailedViewCalledCount = 0
-    
-    func pushToDetailedView(weatherMomentList: [WeatherMoment]) {
-        pushToDetailedViewCalled = true
-        pushToDetailedViewCalledCount += 1
-    }
 }

@@ -22,6 +22,7 @@ struct HomeViewModel {
     }
 }
 
+/// sourcery: AutoMockable
 protocol HomeViewModelFactoryProtocol {
     func createViewModel(weatherMomentList: [WeatherMoment]) -> [HomeViewModel]
 }

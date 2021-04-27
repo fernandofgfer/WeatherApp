@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// sourcery: AutoMockable
 protocol WeatherDataManagerProtocol {
     func fetch(location: String, completion: @escaping (Result<WeatherDTO, ApiClientError>) -> Void)
 }

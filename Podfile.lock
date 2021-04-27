@@ -2,17 +2,21 @@ PODS:
   - SDWebImage (5.6.0):
     - SDWebImage/Core (= 5.6.0)
   - SDWebImage/Core (5.6.0)
+  - Sourcery (0.17.0)
 
 DEPENDENCIES:
   - SDWebImage (~> 5.0)
+  - Sourcery
 
 SPEC REPOS:
   https://cdn.cocoapods.org/:
     - SDWebImage
+    - Sourcery
 
 SPEC CHECKSUMS:
   SDWebImage: 21b19f56b4226cdfe3aefe4e6848dc43ed129a86
+  Sourcery: 3ed61be7c8a1218fce349266139379dba477efe0
 
-PODFILE CHECKSUM: feb431dab808c4b515a89995289c338a3290b13c
+PODFILE CHECKSUM: ec9a36b95b11f9f337b08ef1a71c134c322d8206
 
 COCOAPODS: 1.9.0.beta.2

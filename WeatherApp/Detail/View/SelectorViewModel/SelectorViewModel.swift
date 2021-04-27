@@ -20,6 +20,7 @@ struct SelectorViewModel {
     }
 }
 
+/// sourcery: AutoMockable
 protocol SelectorViewModelMapperProtocol {
     func map(weatherMomentList: [WeatherMoment]) -> [SelectorViewModel]
 }

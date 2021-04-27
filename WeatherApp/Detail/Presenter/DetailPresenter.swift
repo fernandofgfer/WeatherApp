@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// sourcery: AutoMockable
 protocol DetailPresenterProtocol {
     var view: DetailViewProtocol? { get set }
     func viewDidLoad()

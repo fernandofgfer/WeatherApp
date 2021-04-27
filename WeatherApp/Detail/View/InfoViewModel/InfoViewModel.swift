@@ -16,6 +16,7 @@ struct InfoViewModel {
     let humidity: String
 }
 
+/// sourcery: AutoMockable
 protocol InfoViewModelMapperProtocol {
     func map(weatherMoment: WeatherMoment) -> InfoViewModel
 }
