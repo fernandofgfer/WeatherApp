@@ -364,6 +364,26 @@ class InfoViewModelMapperProtocolMock: InfoViewModelMapperProtocol {
     }
 
 }
+class SelectorCellProtocolMock: SelectorCellProtocol {
+
+    //MARK: - loadData
+
+    var loadDataViewModelCallsCount = 0
+    var loadDataViewModelCalled: Bool {
+        return loadDataViewModelCallsCount > 0
+    }
+    var loadDataViewModelReceivedViewModel: SelectorViewModel?
+    var loadDataViewModelReceivedInvocations: [SelectorViewModel] = []
+    var loadDataViewModelClosure: ((SelectorViewModel) -> Void)?
+
+    func loadData(viewModel: SelectorViewModel) {
+        loadDataViewModelCallsCount += 1
+        loadDataViewModelReceivedViewModel = viewModel
+        loadDataViewModelReceivedInvocations.append(viewModel)
+        loadDataViewModelClosure?(viewModel)
+    }
+
+}
 class SelectorViewModelMapperProtocolMock: SelectorViewModelMapperProtocol {
 
     //MARK: - map

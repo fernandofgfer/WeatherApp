@@ -35,6 +35,10 @@ class DetailPresenter: DetailPresenterProtocol {
     
     func viewDidLoad() {
         mapForSelector()
+        populateView()
+    }
+    
+    private func populateView() {
         view?.setTitle(title: weatherMomentList.first?.city)
         view?.reloadTable(numberOfCells: selectorViewModelList.count)
         view?.setInfoView(infoViewModel: infoViewModelMapper.map(weatherMoment: weatherMomentList[0]))

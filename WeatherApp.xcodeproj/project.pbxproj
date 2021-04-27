@@ -11,6 +11,7 @@
 		0729064D263872280093082B /* AutoEquatable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729064B263872280093082B /* AutoEquatable.generated.swift */; };
 		0729064E263872280093082B /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729064C263872280093082B /* AutoMockable.generated.swift */; };
 		072906502638AFEB0093082B /* HomeViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729064F2638AFEB0093082B /* HomeViewModelMapperTests.swift */; };
+		072906542638B31A0093082B /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072906532638B31A0093082B /* DetailPresenterTests.swift */; };
 		073A82F72631CE730024B0A6 /* WeatherDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A82F62631CE730024B0A6 /* WeatherDataManager.swift */; };
 		0755F75D263800210046A69A /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0755F75C263800210046A69A /* InfoView.swift */; };
 		075757DB2631D60000176365 /* StorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075757DA2631D60000176365 /* StorageClient.swift */; };
@@ -71,6 +72,7 @@
 		0729064B263872280093082B /* AutoEquatable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoEquatable.generated.swift; sourceTree = "<group>"; };
 		0729064C263872280093082B /* AutoMockable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
 		0729064F2638AFEB0093082B /* HomeViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelMapperTests.swift; sourceTree = "<group>"; };
+		072906532638B31A0093082B /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
 		073A82F62631CE730024B0A6 /* WeatherDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataManager.swift; sourceTree = "<group>"; };
 		0755F75C263800210046A69A /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		075757DA2631D60000176365 /* StorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageClient.swift; sourceTree = "<group>"; };
@@ -158,6 +160,22 @@
 				0729064C263872280093082B /* AutoMockable.generated.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		072906512638B3010093082B /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				072906522638B3090093082B /* Presenter */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		072906522638B3090093082B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				072906532638B31A0093082B /* DetailPresenterTests.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		075757D92631D5EE00176365 /* Storage */ = {
@@ -278,6 +296,7 @@
 		076812CF2631B5300023448F /* WeatherAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				072906512638B3010093082B /* Detail */,
 				0729064A263872140093082B /* Generated */,
 				07B3A2BC26356E7900DE8890 /* Home */,
 				076812D22631B5300023448F /* Info.plist */,
@@ -744,6 +763,7 @@
 				0729064D263872280093082B /* AutoEquatable.generated.swift in Sources */,
 				0729064E263872280093082B /* AutoMockable.generated.swift in Sources */,
 				07B3A2D92636FD9A00DE8890 /* Utils.swift in Sources */,
+				072906542638B31A0093082B /* DetailPresenterTests.swift in Sources */,
 				07B3A2C82636F7AC00DE8890 /* HomeInteractorTests.swift in Sources */,
 				07B3A2D12636FD3D00DE8890 /* WeatherMomentMapperTests.swift in Sources */,
 				072906502638AFEB0093082B /* HomeViewModelMapperTests.swift in Sources */,

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+/// sourcery: AutoMockable
 protocol SelectorCellProtocol {
     func loadData(viewModel: SelectorViewModel)
 }
