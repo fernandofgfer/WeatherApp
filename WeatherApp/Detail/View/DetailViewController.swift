@@ -32,8 +32,8 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     fileprivate lazy var collection: UICollectionView = {
         let flow = UICollectionViewFlowLayout()
         flow.scrollDirection = .horizontal
-        flow.minimumInteritemSpacing = 0
-        flow.minimumLineSpacing = 0
+        flow.minimumInteritemSpacing = 10
+        flow.minimumLineSpacing = 10
         
         var collection = UICollectionView(frame: .zero, collectionViewLayout: flow)
         collection.translatesAutoresizingMaskIntoConstraints = false

@@ -34,6 +34,7 @@ class SelectorCell: UICollectionViewCell {
     fileprivate lazy var weatherImage: UIImageView = {
         var image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFit
         return image
     }()
     
@@ -60,9 +61,9 @@ class SelectorCell: UICollectionViewCell {
     private func setupView() {
         stackView.addArrangedSubview(dateLabel)
         stackView.addArrangedSubview(hourLabel)
-        stackView.addArrangedSubview(weatherImage)
         
         contentView.addSubview(stackView)
+        contentView.addSubview(weatherImage)
     }
     
     private func setupConstraints() {
@@ -70,8 +71,13 @@ class SelectorCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor),
-            stackView.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
+            stackView.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
+            stackView.heightAnchor.constraint(equalToConstant: 50.0),
+            
+            weatherImage.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10.0),
+            weatherImage.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+            weatherImage.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
+            weatherImage.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor)
         ])
     }
     
@@ -87,6 +93,8 @@ class SelectorCell: UICollectionViewCell {
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.23
         layer.shadowRadius = 4
+        
+        backgroundColor = .gray.withAlphaComponent(0.5)
     }
 }
 
