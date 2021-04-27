@@ -35,6 +35,7 @@ class DetailPresenter: DetailPresenterProtocol {
     func viewDidLoad() {
         mapForSelector()
         view?.reloadTable(numberOfCells: selectorViewModelList.count)
+        view?.setInfoView(infoViewModel: infoViewModelMapper.map(weatherMoment: weatherMomentList[0]))
     }
     
     func configureCell(index: Int, cell: SelectorCellProtocol?) {

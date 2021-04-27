@@ -53,7 +53,6 @@ class HomePresenter: HomePresenterProtocol {
     func cellPressed(index: Int) {
         let weatherMomentForADay =  weatherMomentList.filter { $0.day == homeViewModelList[index].day }
         router.pushToDetailedView(weatherMomentList: weatherMomentForADay)
-        // .sort(by: { $0.day < $1.day })
     }
     
     // MARK: - Private methods

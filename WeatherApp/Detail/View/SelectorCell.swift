@@ -41,11 +41,21 @@ class SelectorCell: UICollectionViewCell {
     fileprivate lazy var stackView: UIStackView = {
        var stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.alignment = .leading;
+        stackView.alignment = .center;
         stackView.spacing = 0
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
+    
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                setHighlitghted()
+            } else {
+                setUnhighlitghted()
+            }
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -83,7 +93,7 @@ class SelectorCell: UICollectionViewCell {
     
     private func setupStyles() {
         // Border
-        layer.borderWidth = 1
+        layer.borderWidth = 3
         layer.borderColor = UIColor.gray.cgColor
         layer.cornerRadius = 10
         
@@ -95,6 +105,14 @@ class SelectorCell: UICollectionViewCell {
         layer.shadowRadius = 4
         
         backgroundColor = .gray.withAlphaComponent(0.5)
+    }
+    
+    private func setHighlitghted() {
+        layer.borderColor = UIColor.lightGray.cgColor
+    }
+    
+    private func setUnhighlitghted() {
+        layer.borderColor = UIColor.gray.cgColor
     }
 }
 

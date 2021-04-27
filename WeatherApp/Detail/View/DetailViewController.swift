@@ -111,33 +111,33 @@ class DetailViewController: UIViewController, DetailViewProtocol {
             collection.heightAnchor.constraint(equalToConstant: 200),
             
             currentTemperatureView.topAnchor.constraint(equalTo: collection.bottomAnchor, constant: 20),
-            currentTemperatureView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            currentTemperatureView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            currentTemperatureView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            currentTemperatureView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             currentTemperatureView.heightAnchor.constraint(equalToConstant: 50),
             
             minTemperatureView.topAnchor.constraint(equalTo: currentTemperatureView.bottomAnchor, constant: 10),
-            minTemperatureView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            minTemperatureView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            minTemperatureView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            minTemperatureView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             minTemperatureView.heightAnchor.constraint(equalToConstant: 50),
             
             maxTemperatureView.topAnchor.constraint(equalTo: minTemperatureView.bottomAnchor, constant: 10),
-            maxTemperatureView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            maxTemperatureView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            maxTemperatureView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            maxTemperatureView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             maxTemperatureView.heightAnchor.constraint(equalToConstant: 50),
             
             feelsLikeTemperatureView.topAnchor.constraint(equalTo: maxTemperatureView.bottomAnchor, constant: 10),
-            feelsLikeTemperatureView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            feelsLikeTemperatureView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            feelsLikeTemperatureView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            feelsLikeTemperatureView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             feelsLikeTemperatureView.heightAnchor.constraint(equalToConstant: 50),
             
             pressureView.topAnchor.constraint(equalTo: feelsLikeTemperatureView.bottomAnchor, constant: 10),
-            pressureView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            pressureView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            pressureView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            pressureView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             pressureView.heightAnchor.constraint(equalToConstant: 50),
             
             humidityView.topAnchor.constraint(equalTo: pressureView.bottomAnchor, constant: 10),
-            humidityView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            humidityView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            humidityView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            humidityView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             humidityView.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
@@ -146,6 +146,7 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         self.numberOfCells = numberOfCells
         DispatchQueue.main.async {
             self.collection.reloadData()
+            self.collection.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .left)
         }
     }
     
