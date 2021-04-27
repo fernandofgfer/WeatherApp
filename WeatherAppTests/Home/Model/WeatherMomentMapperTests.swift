@@ -24,7 +24,6 @@ class WeatherMomentMapperTests: XCTestCase {
     func testMap_shouldReturnProperlyData() {
         // Given
         let dto = WeatherAppUtils.dto
-        //let expectedValue =
         
         // When
         let result = sut.map(weatherDTO: dto, city: "PARIS")

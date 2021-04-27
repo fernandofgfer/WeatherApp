@@ -66,7 +66,6 @@ class HomeInteractorTests: XCTestCase {
         // Then
         XCTAssertEqual(1, presenter.showErrorMessageCallsCount)
     }
-    
 }
 
 
