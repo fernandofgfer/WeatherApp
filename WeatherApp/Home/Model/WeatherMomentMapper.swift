@@ -42,6 +42,13 @@ class WeatherMomentMapper: WeatherMomentMapperProtocol {
     
     private func getWeatherStatus(weather: WeatherDTO.Weather?) -> WeatherMoment.Status {
         return WeatherMoment.Status(description: weather?.description ?? "",
-                                    icon: weather?.icon ?? "")
+                                    icon: getUrlIcon(icon: weather?.icon))
+    }
+    
+    private func getUrlIcon(icon: String?) -> String {
+        guard let icon = icon else {
+            return ""
+        }
+        return "http://openweathermap.org/img/wn/\(icon)@2x.png"
     }
 }

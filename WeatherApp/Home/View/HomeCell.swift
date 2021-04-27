@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 protocol HomeCellProtocol {
     func loadData(viewModel: HomeViewModel)
@@ -135,6 +136,6 @@ extension HomeCell: HomeCellProtocol {
         cityLabel.text = viewModel.city
         dateLabel.text = "\(String(viewModel.day)), \(Date().month)"
         descriptionLabel.text = viewModel.description.capitalized
-        weatherImage.image = .add
+        weatherImage.sd_setImage(with: URL(string: viewModel.image), completed: nil)
     }
 }
