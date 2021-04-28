@@ -16,12 +16,8 @@ class HomeRouter: HomeRouterProtocol {
     
     weak var view: NavigableView?
     
-    init(view: NavigableView?) {
-        self.view = view
-    }
-    
     func pushToDetailedView(weatherMomentList: [WeatherMoment]) {
-        let vc = DetailAssembler.provide(weatherMomentList: weatherMomentList)
+        let vc = DetailAssembler().provideDetail(weatherMomentList: weatherMomentList)
         view?.pushView(vc, animated: true)
     }
 }

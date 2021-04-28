@@ -8,20 +8,48 @@
 import Foundation
 import UIKit
 
-class HomeAssembler {
+protocol HomeAssemblerProtocol {
+    func provideHome() -> UIViewController
+}
 
-    func provide(view: NavigableView?) -> UIViewController {
-        
-        let client = URLSession.init(configuration: URLSessionConfiguration.default)
-        let apiClient = ApiClient(urlSession: client)
-        let dataManager = WeatherDataManager(apiClient: apiClient, apìConfiguration: ApiConfiguration())
-        
-        let router = HomeRouter(view: view)
-        let interactor = HomeInteractor(weatherDataManager: dataManager, storageClient: StorageClient(), weatherMomentMapper: WeatherMomentMapper())
-        let presenter = HomePresenter(interactor: interactor, homeViewModelFactory: HomeViewModelMapper(), router: router)
+class HomeAssembler: HomeAssemblerProtocol {
+
+    func provideHome() -> UIViewController {
+        let dataManager = WeatherDataManager(apiClient: resolveApìClient(),
+                                             apìConfiguration: resolveApiConfiguration())
+        let router = HomeRouter()
+        let interactor = HomeInteractor(weatherDataManager: dataManager,
+                                        storageClient: resolveStorageClient(),
+                                        weatherMomentMapper: resolveWeatherMomentMapper())
+        let presenter = HomePresenter(interactor: interactor,
+                                      homeViewModelFactory: resolveHomeViewModelMapper(),
+                                      router: router)
         let viewController = HomeViewController(presenter: presenter)
         interactor.presenter = presenter
         presenter.view = viewController
+        router.view = viewController
         return viewController
+    }
+    
+    private func resolveApìClient() -> ApiClientProtocol {
+        let client = URLSession.init(configuration: URLSessionConfiguration.default)
+        let apiClient = ApiClient(urlSession: client)
+        return apiClient
+    }
+    
+    private func resolveApiConfiguration() -> ApiConfigurationProtocol {
+        return ApiConfiguration()
+    }
+    
+    private func resolveStorageClient() -> StorageClientProtocol {
+        return StorageClient()
+    }
+    
+    private func resolveWeatherMomentMapper() -> WeatherMomentMapperProtocol {
+        return WeatherMomentMapper()
+    }
+    
+    private func resolveHomeViewModelMapper() -> HomeViewModelMapperProtocol {
+        return HomeViewModelMapper()
     }
 }

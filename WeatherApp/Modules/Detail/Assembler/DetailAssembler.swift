@@ -6,15 +6,27 @@
 //
 
 import Foundation
-// TODO: - Mejorar esto
-class DetailAssembler {
+
+protocol DetailAssemblerProtocol {
+    func provideDetail(weatherMomentList: [WeatherMoment]) -> Presentable
+}
+
+class DetailAssembler: DetailAssemblerProtocol {
     
-    static func provide(weatherMomentList: [WeatherMoment]) -> Presentable {
-        
+    func provideDetail(weatherMomentList: [WeatherMoment]) -> Presentable {
         let presenter = DetailPresenter(weatherMomentList: weatherMomentList,
-                                        selectorViewModelMapper: SelectorViewModelMapper(), infoViewModelMapper: InfoViewModelMapper())
+                                        selectorViewModelMapper: resolveSelectorViewModelMapper(),
+                                        infoViewModelMapper: resolveInfoViewModelMapper())
         let vc = DetailViewController(presenter: presenter)
         presenter.view = vc
         return vc
+    }
+    
+    private func resolveSelectorViewModelMapper() -> SelectorViewModelMapperProtocol {
+        return SelectorViewModelMapper()
+    }
+    
+    private func resolveInfoViewModelMapper() -> InfoViewModelMapperProtocol {
+        return InfoViewModelMapper()
     }
 }

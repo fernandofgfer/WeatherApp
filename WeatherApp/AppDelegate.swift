@@ -16,9 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
      
-        let navigation = UINavigationController()
-        let viewController = HomeAssembler().provide(view: navigation)
-        navigation.setViewControllers([viewController], animated: true)
+        let viewController = HomeAssembler().provideHome()
+        let navigation = UINavigationController(rootViewController: viewController)
         
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
