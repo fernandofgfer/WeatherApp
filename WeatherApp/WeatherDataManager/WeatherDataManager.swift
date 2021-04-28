@@ -14,15 +14,24 @@ protocol WeatherDataManagerProtocol {
 
 class WeatherDataManager: WeatherDataManagerProtocol {
     
-    let apiClient: ApiClientProtocol
+    private let apiClient: ApiClientProtocol
+    private let apiConfiguration: ApiConfigurationProtocol
     
-    init(apiClient: ApiClientProtocol) {
+    init(apiClient: ApiClientProtocol,
+         apìConfiguration: ApiConfigurationProtocol) {
         self.apiClient = apiClient
+        self.apiConfiguration = apìConfiguration
     }
     
     func fetch(location: String, completion: @escaping (Result<WeatherDTO, ApiClientError>) -> Void) {
-        // TODO:- Add this to a plist file
-        let resource = Resource(path: "http://api.openweathermap.org/data/2.5/forecast", method: .get, parameters: ["q": location, "units": "metric", "appid": "b2b93d02ac69637ee86f1275917ffc28"])
+        
+        guard let url = apiConfiguration.getUrl(),
+              let apiKey = apiConfiguration.getApiKey() else {
+            completion(.failure(.unknown))
+            return
+        }
+        
+        let resource = Resource(path: "\(url)forecast", method: .get, parameters: ["q": location, "units": "metric", "appid": apiKey])
         apiClient.fetch(resource: resource, completion: completion)
     }
 }

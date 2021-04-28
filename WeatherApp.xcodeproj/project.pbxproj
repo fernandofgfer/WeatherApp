@@ -19,6 +19,8 @@
 		0729066626395C9A0093082B /* InfoViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729066526395C9A0093082B /* InfoViewModelMapper.swift */; };
 		0729066826395CB80093082B /* SelectorViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729066726395CB80093082B /* SelectorViewModelMapper.swift */; };
 		0729066A263962D70093082B /* HomeViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07290669263962D70093082B /* HomeViewModelMapper.swift */; };
+		0729066C2639669D0093082B /* ApiProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0729066B2639669D0093082B /* ApiProperties.plist */; };
+		0729066E263967200093082B /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729066D263967200093082B /* ApiConfiguration.swift */; };
 		073A82F72631CE730024B0A6 /* WeatherDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A82F62631CE730024B0A6 /* WeatherDataManager.swift */; };
 		0755F75D263800210046A69A /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0755F75C263800210046A69A /* InfoView.swift */; };
 		075757DB2631D60000176365 /* StorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075757DA2631D60000176365 /* StorageClient.swift */; };
@@ -74,6 +76,8 @@
 		0729066526395C9A0093082B /* InfoViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModelMapper.swift; sourceTree = "<group>"; };
 		0729066726395CB80093082B /* SelectorViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorViewModelMapper.swift; sourceTree = "<group>"; };
 		07290669263962D70093082B /* HomeViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelMapper.swift; sourceTree = "<group>"; };
+		0729066B2639669D0093082B /* ApiProperties.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiProperties.plist; sourceTree = "<group>"; };
+		0729066D263967200093082B /* ApiConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfiguration.swift; sourceTree = "<group>"; };
 		073A82F62631CE730024B0A6 /* WeatherDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataManager.swift; sourceTree = "<group>"; };
 		0755F75C263800210046A69A /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		075757DA2631D60000176365 /* StorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageClient.swift; sourceTree = "<group>"; };
@@ -378,6 +382,8 @@
 			isa = PBXGroup;
 			children = (
 				07B3A2B726346CE100DE8890 /* WeatherColors.swift */,
+				0729066B2639669D0093082B /* ApiProperties.plist */,
+				0729066D263967200093082B /* ApiConfiguration.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -571,6 +577,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0729066C2639669D0093082B /* ApiProperties.plist in Resources */,
 				076812C62631B5300023448F /* LaunchScreen.storyboard in Resources */,
 				0729065F263952BE0093082B /* Localizable.strings in Resources */,
 				076812C32631B5300023448F /* Assets.xcassets in Resources */,
@@ -682,6 +689,7 @@
 				07B3A2DE263700EC00DE8890 /* HomeRouter.swift in Sources */,
 				075757E62631DEB400176365 /* HomeInteractor.swift in Sources */,
 				07B3A2EC2637057F00DE8890 /* DetailViewController.swift in Sources */,
+				0729066E263967200093082B /* ApiConfiguration.swift in Sources */,
 				07B3A2F726370AA200DE8890 /* SelectorViewModel.swift in Sources */,
 				07B3A2A72633175D00DE8890 /* HomeCell.swift in Sources */,
 				075757F126320A6A00176365 /* WeatherMoment.swift in Sources */,

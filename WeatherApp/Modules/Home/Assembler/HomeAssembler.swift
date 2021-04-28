@@ -14,7 +14,7 @@ class HomeAssembler {
         
         let client = URLSession.init(configuration: URLSessionConfiguration.default)
         let apiClient = ApiClient(urlSession: client)
-        let dataManager = WeatherDataManager(apiClient: apiClient)
+        let dataManager = WeatherDataManager(apiClient: apiClient, apìConfiguration: ApiConfiguration())
         
         let router = HomeRouter(view: view)
         let interactor = HomeInteractor(weatherDataManager: dataManager, storageClient: StorageClient(), weatherMomentMapper: WeatherMomentMapper())
