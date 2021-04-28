@@ -22,7 +22,7 @@ class WeatherDataManager: WeatherDataManagerProtocol {
     
     func fetch(location: String, completion: @escaping (Result<WeatherDTO, ApiClientError>) -> Void) {
         // TODO:- Add this to a plist file
-        let resource = Resource(path: "http://api.openweathermap.org/data/2.5/forecast", method: .get, parameters: ["q": location, "units": "metrics", "appid": "b2b93d02ac69637ee86f1275917ffc28"])
+        let resource = Resource(path: "http://api.openweathermap.org/data/2.5/forecast", method: .get, parameters: ["q": location, "units": "metric", "appid": "b2b93d02ac69637ee86f1275917ffc28"])
         apiClient.fetch(resource: resource, completion: completion)
     }
 }

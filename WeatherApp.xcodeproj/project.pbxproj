@@ -199,6 +199,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		072906622639553A0093082B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				075757DF2631DE5400176365 /* Home */,
+				07B3A2E72637053D00DE8890 /* Detail */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		075757D92631D5EE00176365 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,10 +303,9 @@
 		076812B82631B52F0023448F /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				07B3A2E72637053D00DE8890 /* Detail */,
+				072906622639553A0093082B /* Modules */,
 				07B3A2B626346CC700DE8890 /* Resources */,
 				07B3A2AB2634662500DE8890 /* Utils */,
-				075757DF2631DE5400176365 /* Home */,
 				075757D92631D5EE00176365 /* Storage */,
 				076813052631C9CA0023448F /* WeatherDataManager */,
 				076812F22631B68A0023448F /* Network */,
