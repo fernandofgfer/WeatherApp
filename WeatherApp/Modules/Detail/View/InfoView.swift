@@ -14,7 +14,7 @@ class InfoView: UIView {
     fileprivate lazy var titleLabel: UILabel = {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 10)
+        label.font = .boldSystemFont(ofSize: 18)
         label.textColor = .white
         return label
     }()
@@ -22,7 +22,7 @@ class InfoView: UIView {
     fileprivate lazy var dataLabel: UILabel = {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 10)
+        label.font = .boldSystemFont(ofSize: 22)
         label.textColor = .white
         return label
     }()
