@@ -18,7 +18,7 @@ protocol DetailViewProtocol: AnyObject {
 
 class DetailViewController: UIViewController, DetailViewProtocol {
     
-    //MARK: - Content
+    // MARK: - Content
     
     private enum Content {
         static let currentTemperature = "DetailViewController.currentTemperature"
@@ -154,7 +154,7 @@ class DetailViewController: UIViewController, DetailViewProtocol {
             humidityView.topAnchor.constraint(equalTo: pressureView.bottomAnchor, constant: 10),
             humidityView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             humidityView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            humidityView.heightAnchor.constraint(equalToConstant: 50),
+            humidityView.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
@@ -173,12 +173,18 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     }
     
     func setInfoView(infoViewModel: InfoViewModel) {
-        currentTemperatureView.setData(title: NSLocalizedString(Content.currentTemperature, comment: ""), data: infoViewModel.currentTemperature)
-        minTemperatureView.setData(title: NSLocalizedString(Content.minTemperature, comment: ""), data: infoViewModel.minTemperature)
-        maxTemperatureView.setData(title: NSLocalizedString(Content.maxTemperature, comment: ""), data: infoViewModel.maxTemperature)
-        feelsLikeTemperatureView.setData(title: NSLocalizedString(Content.feelsLikeTemperature, comment: ""), data: infoViewModel.feelsLikeTemperature)
-        pressureView.setData(title: NSLocalizedString(Content.pressure, comment: ""), data: infoViewModel.pression)
-        humidityView.setData(title: NSLocalizedString(Content.humidity, comment: ""), data: infoViewModel.humidity)
+        currentTemperatureView.setData(title: NSLocalizedString(Content.currentTemperature, comment: ""),
+                                       data: infoViewModel.currentTemperature)
+        minTemperatureView.setData(title: NSLocalizedString(Content.minTemperature, comment: ""),
+                                   data: infoViewModel.minTemperature)
+        maxTemperatureView.setData(title: NSLocalizedString(Content.maxTemperature, comment: ""),
+                                   data: infoViewModel.maxTemperature)
+        feelsLikeTemperatureView.setData(title: NSLocalizedString(Content.feelsLikeTemperature, comment: ""),
+                                         data: infoViewModel.feelsLikeTemperature)
+        pressureView.setData(title: NSLocalizedString(Content.pressure, comment: ""),
+                             data: infoViewModel.pression)
+        humidityView.setData(title: NSLocalizedString(Content.humidity, comment: ""),
+                             data: infoViewModel.humidity)
     }
 }
 

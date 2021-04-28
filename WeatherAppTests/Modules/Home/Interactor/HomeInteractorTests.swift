@@ -68,16 +68,15 @@ class HomeInteractorTests: XCTestCase {
     }
 }
 
-
 class StorageClientProtocolMock: StorageClientProtocol {
     var saveCallsCount = 0
     var fetchCallsCount = 0
     
-    func save<T>(key: String, data: T) where T : Decodable, T : Encodable {
+    func save<T>(key: String, data: T) where T: Decodable, T: Encodable {
         saveCallsCount += 1
     }
     
-    func fetch<T>(key: String) -> T? where T : Decodable, T : Encodable {
+    func fetch<T>(key: String) -> T? where T: Decodable, T: Encodable {
         fetchCallsCount += 1
         return T.self as? T
     }

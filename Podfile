@@ -7,14 +7,5 @@ target 'WeatherApp' do
 
   pod 'SDWebImage', '~> 5.0'
   pod 'Sourcery'
-
-  target 'WeatherAppTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'WeatherAppUITests' do
-    # Pods for testing
-  end
-
+  pod 'SwiftLint'
 end

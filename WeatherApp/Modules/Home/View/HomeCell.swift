@@ -52,7 +52,7 @@ class HomeCell: UITableViewCell {
     fileprivate lazy var leftStackView: UIStackView = {
        var stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.alignment = .leading;
+        stackView.alignment = .leading
         stackView.spacing = 0
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -113,7 +113,6 @@ class HomeCell: UITableViewCell {
         layer.borderColor = UIColor.gray.cgColor
         layer.cornerRadius = 10
         
-        
         // Shadow
         layer.shadowOffset = .zero
         layer.shadowColor = UIColor.black.cgColor
@@ -125,7 +124,7 @@ class HomeCell: UITableViewCell {
         
         let color1 = WeatherColors.cellTopColor
         let color2 = WeatherColors.cellBottomColor
-        gradientLayer.colors = [color1?.cgColor ?? .init(gray: 1, alpha: 1) , color2?.cgColor ?? .init(gray: 1, alpha: 1)]
+        gradientLayer.colors = [color1?.cgColor ?? .init(gray: 1, alpha: 1), color2?.cgColor ?? .init(gray: 1, alpha: 1)]
         gradientLayer.cornerRadius = 10
         layer.insertSublayer(gradientLayer, at: 0)
         

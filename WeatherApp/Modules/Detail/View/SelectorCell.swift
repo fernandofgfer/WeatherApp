@@ -44,7 +44,7 @@ class SelectorCell: UICollectionViewCell {
     fileprivate lazy var stackView: UIStackView = {
        var stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.alignment = .center;
+        stackView.alignment = .center
         stackView.spacing = 0
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -104,14 +104,13 @@ class SelectorCell: UICollectionViewCell {
         layer.borderColor = UIColor.gray.cgColor
         layer.cornerRadius = 10
         
-        
         // Shadow
         layer.shadowOffset = .zero
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.23
         layer.shadowRadius = 4
         
-        backgroundColor = UIColor(red: 94/255, green: 159/255, blue: 167/255, alpha: 1)
+        backgroundColor = WeatherColors.selectorCellBackgroundColor
     }
     
     private func setHighlitghted() {

@@ -13,7 +13,7 @@ protocol StorageClientProtocol {
 }
 
 class StorageClient: StorageClientProtocol {
-    func save<T>(key: String, data: T) where T : Decodable, T : Encodable {
+    func save<T>(key: String, data: T) where T: Decodable, T: Encodable {
         let filePath = getDocumentsDirectory().appendingPathComponent(key)
         do {
             let dataEncoded = try JSONSerialization.jsonObject(with: JSONEncoder().encode(data)) as? [String: Any] ?? [:]
@@ -25,7 +25,7 @@ class StorageClient: StorageClientProtocol {
         }
     }
     
-    func fetch<T>(key: String) -> T? where T : Decodable, T : Encodable {
+    func fetch<T>(key: String) -> T? where T: Decodable, T: Encodable {
         let filePath = getDocumentsDirectory().appendingPathComponent(key)
         do {
             let dataFile = try Data(contentsOf: filePath)

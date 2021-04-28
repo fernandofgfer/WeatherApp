@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 class ApiClient: ApiClientProtocol {
     
     var urlSession: URLSession
@@ -30,7 +28,7 @@ class ApiClient: ApiClientProtocol {
         return urlRequest
     }
     
-    func fetch<T>(resource: Resource, completion: @escaping Callback<T>) where T : Decodable {
+    func fetch<T>(resource: Resource, completion: @escaping Callback<T>) where T: Decodable {
         guard let request = makeRequest(resource: resource) else {
             completion(.failure(.urlWrong))
             return

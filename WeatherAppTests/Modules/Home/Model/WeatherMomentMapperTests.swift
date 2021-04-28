@@ -33,7 +33,3 @@ class WeatherMomentMapperTests: XCTestCase {
         XCTAssertEqual("PARIS", result[0].city)
     }
 }
-
-
-
-

@@ -45,4 +45,3 @@ public enum ApiClientError: Error {
 public enum HTTPMethod: String {
     case get = "GET"
 }
-

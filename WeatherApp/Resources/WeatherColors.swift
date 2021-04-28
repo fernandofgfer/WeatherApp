@@ -12,4 +12,5 @@ enum WeatherColors {
     static let backgroundMainColor = UIColor(named: "BackgroundMain")
     static let cellTopColor = UIColor(named: "CellTop")
     static let cellBottomColor = UIColor(named: "CellBottom")
+    static let selectorCellBackgroundColor = UIColor(named: "SelectorCellBacground")
 }

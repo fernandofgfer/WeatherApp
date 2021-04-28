@@ -26,7 +26,6 @@ class WeatherMomentMapper: WeatherMomentMapperProtocol {
         }
     }
     
-    
     private func getDay(from timestamp: Double) -> DateComponents {
         let date = Date(timeIntervalSince1970: timestamp)
         return Calendar.current.dateComponents([.day, .hour], from: date)
