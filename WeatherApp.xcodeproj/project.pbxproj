@@ -27,8 +27,6 @@
 		075757F126320A6A00176365 /* WeatherMoment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075757F026320A6A00176365 /* WeatherMoment.swift */; };
 		075757F626320B1E00176365 /* WeatherMomentMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075757F526320B1E00176365 /* WeatherMomentMapper.swift */; };
 		076812BA2631B52F0023448F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076812B92631B52F0023448F /* AppDelegate.swift */; };
-		076812BC2631B52F0023448F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076812BB2631B52F0023448F /* SceneDelegate.swift */; };
-		076812C12631B52F0023448F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076812BF2631B52F0023448F /* Main.storyboard */; };
 		076812C32631B5300023448F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076812C22631B5300023448F /* Assets.xcassets */; };
 		076812C62631B5300023448F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076812C42631B5300023448F /* LaunchScreen.storyboard */; };
 		076812F42631B6970023448F /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076812F32631B6970023448F /* ApiClient.swift */; };
@@ -85,8 +83,6 @@
 		075757F526320B1E00176365 /* WeatherMomentMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMomentMapper.swift; sourceTree = "<group>"; };
 		076812B62631B52F0023448F /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		076812B92631B52F0023448F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		076812BB2631B52F0023448F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		076812C02631B52F0023448F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		076812C22631B5300023448F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		076812C52631B5300023448F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		076812C72631B5300023448F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -314,8 +310,6 @@
 				076813052631C9CA0023448F /* WeatherDataManager */,
 				076812F22631B68A0023448F /* Network */,
 				076812B92631B52F0023448F /* AppDelegate.swift */,
-				076812BB2631B52F0023448F /* SceneDelegate.swift */,
-				076812BF2631B52F0023448F /* Main.storyboard */,
 				076812C22631B5300023448F /* Assets.xcassets */,
 				076812C42631B5300023448F /* LaunchScreen.storyboard */,
 				076812C72631B5300023448F /* Info.plist */,
@@ -580,7 +574,6 @@
 				076812C62631B5300023448F /* LaunchScreen.storyboard in Resources */,
 				0729065F263952BE0093082B /* Localizable.strings in Resources */,
 				076812C32631B5300023448F /* Assets.xcassets in Resources */,
-				076812C12631B52F0023448F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,7 +701,6 @@
 				07B3A2B826346CE100DE8890 /* WeatherColors.swift in Sources */,
 				07B3A2E32637032000DE8890 /* NavigableView.swift in Sources */,
 				07B3A2FF26370C6100DE8890 /* SelectorCell.swift in Sources */,
-				076812BC2631B52F0023448F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,14 +738,6 @@
 				07290660263952BE0093082B /* en */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		076812BF2631B52F0023448F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				076812C02631B52F0023448F /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		076812C42631B5300023448F /* LaunchScreen.storyboard */ = {

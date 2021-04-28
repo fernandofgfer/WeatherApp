@@ -280,7 +280,7 @@ class HomeRouterProtocolMock: HomeRouterProtocol {
     }
 
 }
-class HomeViewModelFactoryProtocolMock: HomeViewModelMapperProtocol {
+class HomeViewModelMapperProtocolMock: HomeViewModelMapperProtocol {
 
     //MARK: - createViewModel
 
