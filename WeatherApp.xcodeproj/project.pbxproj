@@ -207,6 +207,14 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		07290670263973630093082B /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				076813052631C9CA0023448F /* WeatherDataManager */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		075757D92631D5EE00176365 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,7 +314,6 @@
 				07B3A2B626346CC700DE8890 /* Resources */,
 				07B3A2AB2634662500DE8890 /* Utils */,
 				075757D92631D5EE00176365 /* Storage */,
-				076813052631C9CA0023448F /* WeatherDataManager */,
 				076812F22631B68A0023448F /* Network */,
 				076812B92631B52F0023448F /* AppDelegate.swift */,
 				076812C22631B5300023448F /* Assets.xcassets */,
@@ -331,6 +338,7 @@
 		076812F22631B68A0023448F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				07290670263973630093082B /* DataManager */,
 				076812F32631B6970023448F /* ApiClient.swift */,
 				0729066326395B620093082B /* ApiClientProtocol.swift */,
 			);
