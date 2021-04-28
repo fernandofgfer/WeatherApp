@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  WeatherApp
+
+  Created by Fernando Garcia Fernandez on 28/4/21.
+  
+*/
+
+// Detail View Controller
+"DetailViewController.currentTemperature" = "Current Temperature";
+"DetailViewController.minTemperature" = "Minimun temperature";
+"DetailViewController.maxTemperature" = "Maximun temparature";
+"DetailViewController.feelsLikeTemperature" = "Feels like temperature";
+"DetailViewController.pressureTemperature" = "Pressure";
+"DetailViewController.humidityTemperature" = "Humidity";
+
+// Errors
+"Error.uknown" = "Unknown error received";
+"Error.decode" = "Decode data failed";
+"Error.data" = "Response without data";
+"Error.url" = "URL failed";
+"Error.network" = "Network problem";

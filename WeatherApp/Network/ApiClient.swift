@@ -17,15 +17,15 @@ public enum ApiClientError: Error {
     var message: String {
         switch self {
         case .unknown:
-            return "Unknown error received"
+            return NSLocalizedString("Error.unknown", comment: "")
         case .decodeFailed:
-            return "Decode data failed"
+            return NSLocalizedString("Error.decode", comment: "")
         case .noData:
-            return "Response without data"
+            return NSLocalizedString("Error.data", comment: "")
         case .urlWrong:
-            return "URL failed"
+            return NSLocalizedString("Error.url", comment: "")
         case .noInternet:
-            return "Network problem"
+            return NSLocalizedString("Error.network", comment: "")
         }
     }
 }
