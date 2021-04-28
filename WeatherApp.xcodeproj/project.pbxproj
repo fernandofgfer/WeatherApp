@@ -15,6 +15,10 @@
 		072906572638B7280093082B /* InfoViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072906562638B7280093082B /* InfoViewModelMapperTests.swift */; };
 		072906592638B8370093082B /* SelectotrViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072906582638B8370093082B /* SelectotrViewModelMapperTests.swift */; };
 		0729065F263952BE0093082B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07290661263952BE0093082B /* Localizable.strings */; };
+		0729066426395B620093082B /* ApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729066326395B620093082B /* ApiClientProtocol.swift */; };
+		0729066626395C9A0093082B /* InfoViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729066526395C9A0093082B /* InfoViewModelMapper.swift */; };
+		0729066826395CB80093082B /* SelectorViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0729066726395CB80093082B /* SelectorViewModelMapper.swift */; };
+		0729066A263962D70093082B /* HomeViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07290669263962D70093082B /* HomeViewModelMapper.swift */; };
 		073A82F72631CE730024B0A6 /* WeatherDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A82F62631CE730024B0A6 /* WeatherDataManager.swift */; };
 		0755F75D263800210046A69A /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0755F75C263800210046A69A /* InfoView.swift */; };
 		075757DB2631D60000176365 /* StorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075757DA2631D60000176365 /* StorageClient.swift */; };
@@ -24,7 +28,6 @@
 		075757F626320B1E00176365 /* WeatherMomentMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075757F526320B1E00176365 /* WeatherMomentMapper.swift */; };
 		076812BA2631B52F0023448F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076812B92631B52F0023448F /* AppDelegate.swift */; };
 		076812BC2631B52F0023448F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076812BB2631B52F0023448F /* SceneDelegate.swift */; };
-		076812BE2631B52F0023448F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076812BD2631B52F0023448F /* ViewController.swift */; };
 		076812C12631B52F0023448F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076812BF2631B52F0023448F /* Main.storyboard */; };
 		076812C32631B5300023448F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 076812C22631B5300023448F /* Assets.xcassets */; };
 		076812C62631B5300023448F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076812C42631B5300023448F /* LaunchScreen.storyboard */; };
@@ -35,7 +38,6 @@
 		07B3A29D26330F3900DE8890 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A29C26330F3900DE8890 /* HomeViewController.swift */; };
 		07B3A2A22633140F00DE8890 /* HomeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2A12633140F00DE8890 /* HomeAssembler.swift */; };
 		07B3A2A72633175D00DE8890 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2A62633175D00DE8890 /* HomeCell.swift */; };
-		07B3A2AD2634664000DE8890 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2AC2634664000DE8890 /* Date+Utils.swift */; };
 		07B3A2B22634684D00DE8890 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2B12634684D00DE8890 /* UIViewController+Utils.swift */; };
 		07B3A2B826346CE100DE8890 /* WeatherColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2B726346CE100DE8890 /* WeatherColors.swift */; };
 		07B3A2BF26356EA600DE8890 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3A2BE26356EA600DE8890 /* HomePresenterTests.swift */; };
@@ -70,6 +72,10 @@
 		072906562638B7280093082B /* InfoViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModelMapperTests.swift; sourceTree = "<group>"; };
 		072906582638B8370093082B /* SelectotrViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectotrViewModelMapperTests.swift; sourceTree = "<group>"; };
 		07290660263952BE0093082B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0729066326395B620093082B /* ApiClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientProtocol.swift; sourceTree = "<group>"; };
+		0729066526395C9A0093082B /* InfoViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModelMapper.swift; sourceTree = "<group>"; };
+		0729066726395CB80093082B /* SelectorViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorViewModelMapper.swift; sourceTree = "<group>"; };
+		07290669263962D70093082B /* HomeViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelMapper.swift; sourceTree = "<group>"; };
 		073A82F62631CE730024B0A6 /* WeatherDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataManager.swift; sourceTree = "<group>"; };
 		0755F75C263800210046A69A /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		075757DA2631D60000176365 /* StorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageClient.swift; sourceTree = "<group>"; };
@@ -80,7 +86,6 @@
 		076812B62631B52F0023448F /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		076812B92631B52F0023448F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		076812BB2631B52F0023448F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		076812BD2631B52F0023448F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		076812C02631B52F0023448F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		076812C22631B5300023448F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		076812C52631B5300023448F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,7 +99,6 @@
 		07B3A29C26330F3900DE8890 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		07B3A2A12633140F00DE8890 /* HomeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembler.swift; sourceTree = "<group>"; };
 		07B3A2A62633175D00DE8890 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
-		07B3A2AC2634664000DE8890 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		07B3A2B12634684D00DE8890 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		07B3A2B726346CE100DE8890 /* WeatherColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherColors.swift; sourceTree = "<group>"; };
 		07B3A2BE26356EA600DE8890 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
@@ -219,7 +223,6 @@
 		075757DF2631DE5400176365 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				075757EF26320A4D00176365 /* Model */,
 				075757E42631DEA200176365 /* Assembler */,
 				075757E32631DE9E00176365 /* Router */,
 				075757E22631DE9900176365 /* View */,
@@ -303,6 +306,7 @@
 		076812B82631B52F0023448F /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				075757EF26320A4D00176365 /* Model */,
 				072906622639553A0093082B /* Modules */,
 				07B3A2B626346CC700DE8890 /* Resources */,
 				07B3A2AB2634662500DE8890 /* Utils */,
@@ -311,7 +315,6 @@
 				076812F22631B68A0023448F /* Network */,
 				076812B92631B52F0023448F /* AppDelegate.swift */,
 				076812BB2631B52F0023448F /* SceneDelegate.swift */,
-				076812BD2631B52F0023448F /* ViewController.swift */,
 				076812BF2631B52F0023448F /* Main.storyboard */,
 				076812C22631B5300023448F /* Assets.xcassets */,
 				076812C42631B5300023448F /* LaunchScreen.storyboard */,
@@ -336,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				076812F32631B6970023448F /* ApiClient.swift */,
+				0729066326395B620093082B /* ApiClientProtocol.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -353,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				07AC7AFA26380768000AB5AF /* InfoViewModel.swift */,
+				0729066526395C9A0093082B /* InfoViewModelMapper.swift */,
 			);
 			path = InfoViewModel;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				07B3A2972633031400DE8890 /* HomeViewModel.swift */,
+				07290669263962D70093082B /* HomeViewModelMapper.swift */,
 			);
 			path = HomeViewModel;
 			sourceTree = "<group>";
@@ -368,7 +374,6 @@
 		07B3A2AB2634662500DE8890 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				07B3A2AC2634664000DE8890 /* Date+Utils.swift */,
 				07B3A2B12634684D00DE8890 /* UIViewController+Utils.swift */,
 				07B3A2E22637032000DE8890 /* NavigableView.swift */,
 			);
@@ -460,6 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				07B3A2F626370AA200DE8890 /* SelectorViewModel.swift */,
+				0729066726395CB80093082B /* SelectorViewModelMapper.swift */,
 			);
 			path = SelectorViewModel;
 			sourceTree = "<group>";
@@ -676,25 +682,27 @@
 			files = (
 				07B3A30426370EAD00DE8890 /* DetailAssembler.swift in Sources */,
 				073A82F72631CE730024B0A6 /* WeatherDataManager.swift in Sources */,
-				076812BE2631B52F0023448F /* ViewController.swift in Sources */,
 				07B3A2B22634684D00DE8890 /* UIViewController+Utils.swift in Sources */,
 				075757DB2631D60000176365 /* StorageClient.swift in Sources */,
 				07AC7AFB26380768000AB5AF /* InfoViewModel.swift in Sources */,
+				0729066A263962D70093082B /* HomeViewModelMapper.swift in Sources */,
 				07B3A2DE263700EC00DE8890 /* HomeRouter.swift in Sources */,
 				075757E62631DEB400176365 /* HomeInteractor.swift in Sources */,
 				07B3A2EC2637057F00DE8890 /* DetailViewController.swift in Sources */,
 				07B3A2F726370AA200DE8890 /* SelectorViewModel.swift in Sources */,
 				07B3A2A72633175D00DE8890 /* HomeCell.swift in Sources */,
-				07B3A2AD2634664000DE8890 /* Date+Utils.swift in Sources */,
 				075757F126320A6A00176365 /* WeatherMoment.swift in Sources */,
 				076812F42631B6970023448F /* ApiClient.swift in Sources */,
 				075757F626320B1E00176365 /* WeatherMomentMapper.swift in Sources */,
 				07B3A2982633031400DE8890 /* HomeViewModel.swift in Sources */,
 				076813072631C9DD0023448F /* WeatherDTO.swift in Sources */,
 				075757EB2631FE2600176365 /* HomePresenter.swift in Sources */,
+				0729066626395C9A0093082B /* InfoViewModelMapper.swift in Sources */,
+				0729066826395CB80093082B /* SelectorViewModelMapper.swift in Sources */,
 				07B3A2F1263708D000DE8890 /* DetailPresenter.swift in Sources */,
 				0755F75D263800210046A69A /* InfoView.swift in Sources */,
 				076812BA2631B52F0023448F /* AppDelegate.swift in Sources */,
+				0729066426395B620093082B /* ApiClientProtocol.swift in Sources */,
 				07B3A2A22633140F00DE8890 /* HomeAssembler.swift in Sources */,
 				07B3A29D26330F3900DE8890 /* HomeViewController.swift in Sources */,
 				07B3A2B826346CE100DE8890 /* WeatherColors.swift in Sources */,

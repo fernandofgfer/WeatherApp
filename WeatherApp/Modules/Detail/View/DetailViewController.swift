@@ -18,6 +18,8 @@ protocol DetailViewProtocol: AnyObject {
 
 class DetailViewController: UIViewController, DetailViewProtocol {
     
+    //MARK: - Content
+    
     private enum Content {
         static let currentTemperature = "DetailViewController.currentTemperature"
         static let minTemperature = "DetailViewController.minTemperature"
@@ -29,15 +31,6 @@ class DetailViewController: UIViewController, DetailViewProtocol {
     
     private var numberOfCells = 0
     var presenter: DetailPresenterProtocol
-    
-    init(presenter: DetailPresenterProtocol) {
-        self.presenter = presenter
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     // MARK: - Private UI Elements
     fileprivate lazy var collection: UICollectionView = {
@@ -90,6 +83,16 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         return infoView
     }()
     
+    // MARK: - Lifecycle methods
+    
+    init(presenter: DetailPresenterProtocol) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +101,9 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         presenter.viewDidLoad()
     }
     
-    func setupViews() {
+    // MARK: - Private methods
+    
+    private func setupViews() {
         view.backgroundColor = WeatherColors.backgroundMainColor
         
         view.addSubview(collection)
@@ -113,7 +118,7 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         collection.register(SelectorCell.self, forCellWithReuseIdentifier: String(describing: SelectorCell.self))
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             
             collection.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
@@ -153,6 +158,8 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         ])
     }
     
+    // MARK: - DetailViewProtocol
+    
     func reloadTable(numberOfCells: Int) {
         self.numberOfCells = numberOfCells
         DispatchQueue.main.async {
@@ -173,8 +180,9 @@ class DetailViewController: UIViewController, DetailViewProtocol {
         pressureView.setData(title: NSLocalizedString(Content.pressure, comment: ""), data: infoViewModel.pression)
         humidityView.setData(title: NSLocalizedString(Content.humidity, comment: ""), data: infoViewModel.humidity)
     }
-
 }
+
+// MARK: - Collection delegates
 
 extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -38,6 +38,7 @@ class InfoView: UIView {
         return stackView
     }()
     
+    // MARK: - Lifecycle methods
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,6 +49,8 @@ class InfoView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Private methods
     
     private func setupView() {
         stackView.addArrangedSubview(titleLabel)

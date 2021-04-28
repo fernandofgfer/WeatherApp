@@ -60,6 +60,8 @@ class SelectorCell: UICollectionViewCell {
         }
     }
     
+    // MARK: - Lifecycle methods
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -70,6 +72,8 @@ class SelectorCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Private methods
     
     private func setupView() {
         stackView.addArrangedSubview(dateLabel)

@@ -17,20 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-//        let client = URLSession.init(configuration: URLSessionConfiguration.default)
-//        let apiClient = ApiClient(urlSession: client)
-//        let dataManager = WeatherDataManager(apiClient: apiClient)
-//        dataManager.fetch(location: "LONDON") { result in
-//            switch result {
-//            case .success(let dto):
-//                let x = WeatherMomentMapper().map(weatherDTO: dto)
-//                let y = HomeViewModelFactory().createViewModel(weatherMomentList: x)
-//                print(y)
-//            default:
-//                return
-//            }
-//        }
-        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)

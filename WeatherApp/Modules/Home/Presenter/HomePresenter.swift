@@ -27,7 +27,7 @@ class HomePresenter: HomePresenterProtocol {
     
     // MARK: - Private
     private let interactor: HomeInteractorProtocol
-    private let homeViewModelFactory: HomeViewModelFactoryProtocol
+    private let homeViewModelFactory: HomeViewModelMapperProtocol
     private var weatherMomentList: [WeatherMoment] = []
     private var homeViewModelList: [HomeViewModel] = []
     private var router: HomeRouterProtocol
@@ -35,7 +35,7 @@ class HomePresenter: HomePresenterProtocol {
     // MARK: - Custom init
     
     init(interactor: HomeInteractorProtocol,
-         homeViewModelFactory: HomeViewModelFactoryProtocol,
+         homeViewModelFactory: HomeViewModelMapperProtocol,
          router: HomeRouterProtocol) {
         self.interactor = interactor
         self.homeViewModelFactory = homeViewModelFactory

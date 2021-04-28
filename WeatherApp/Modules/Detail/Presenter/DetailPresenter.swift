@@ -19,10 +19,10 @@ class DetailPresenter: DetailPresenterProtocol {
     
     weak var view: DetailViewProtocol?
     
+    // MARK: - Private
     private var weatherMomentList: [WeatherMoment]
     private var selectorViewModelMapper: SelectorViewModelMapperProtocol
     private var infoViewModelMapper: InfoViewModelMapperProtocol
-    
     private var selectorViewModelList: [SelectorViewModel] = []
     
     init(weatherMomentList: [WeatherMoment],
@@ -33,15 +33,11 @@ class DetailPresenter: DetailPresenterProtocol {
         self.infoViewModelMapper = infoViewModelMapper
     }
     
+    // MARK: - DetailPresenterProtocol
+    
     func viewDidLoad() {
         mapForSelector()
         populateView()
-    }
-    
-    private func populateView() {
-        view?.setTitle(title: weatherMomentList.first?.city)
-        view?.reloadTable(numberOfCells: selectorViewModelList.count)
-        view?.setInfoView(infoViewModel: infoViewModelMapper.map(weatherMoment: weatherMomentList[0]))
     }
     
     func configureCell(index: Int, cell: SelectorCellProtocol?) {
@@ -50,6 +46,14 @@ class DetailPresenter: DetailPresenterProtocol {
     
     func cellPressed(index: Int) {
         view?.setInfoView(infoViewModel: infoViewModelMapper.map(weatherMoment: weatherMomentList[index]))
+    }
+    
+    // MARK: - Private methods
+    
+    private func populateView() {
+        view?.setTitle(title: weatherMomentList.first?.city)
+        view?.reloadTable(numberOfCells: selectorViewModelList.count)
+        view?.setInfoView(infoViewModel: infoViewModelMapper.map(weatherMoment: weatherMomentList[0]))
     }
     
     private func mapForSelector() {

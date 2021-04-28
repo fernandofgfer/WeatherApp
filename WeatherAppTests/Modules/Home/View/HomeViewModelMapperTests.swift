@@ -13,11 +13,11 @@ import XCTest
 
 class HomeViewModelMapperTests: XCTestCase {
  
-    var sut: HomeViewModelFactory!
+    var sut: HomeViewModelMapper!
     
     override func setUpWithError() throws {
         super.setUp()
-        sut = HomeViewModelFactory()
+        sut = HomeViewModelMapper()
     }
  
     override func tearDownWithError() throws {

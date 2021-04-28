@@ -132,6 +132,8 @@ class HomeCell: UITableViewCell {
     }
 }
 
+// MARK: - HomeCellProtocol
+
 extension HomeCell: HomeCellProtocol {
     func loadData(viewModel: HomeViewModel) {
         cityLabel.text = viewModel.city

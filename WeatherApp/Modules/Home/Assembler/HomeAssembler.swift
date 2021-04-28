@@ -18,7 +18,7 @@ class HomeAssembler {
         
         let router = HomeRouter(view: view)
         let interactor = HomeInteractor(weatherDataManager: dataManager, storageClient: StorageClient(), weatherMomentMapper: WeatherMomentMapper())
-        let presenter = HomePresenter(interactor: interactor, homeViewModelFactory: HomeViewModelFactory(), router: router)
+        let presenter = HomePresenter(interactor: interactor, homeViewModelFactory: HomeViewModelMapper(), router: router)
         let viewController = HomeViewController(presenter: presenter)
         interactor.presenter = presenter
         presenter.view = viewController
