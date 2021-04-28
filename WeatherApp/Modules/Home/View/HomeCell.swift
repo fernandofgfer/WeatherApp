@@ -122,9 +122,9 @@ class HomeCell: UITableViewCell {
         // Background
         backgroundColor = .clear
         
-        let color1 = WeatherColors.cellTopColor
-        let color2 = WeatherColors.cellBottomColor
-        gradientLayer.colors = [color1?.cgColor ?? .init(gray: 1, alpha: 1), color2?.cgColor ?? .init(gray: 1, alpha: 1)]
+        let colorTop = WeatherColors.cellTopColor
+        let colorBottom = WeatherColors.cellBottomColor
+        gradientLayer.colors = [colorTop?.cgColor ?? .init(gray: 1, alpha: 1), colorBottom?.cgColor ?? .init(gray: 1, alpha: 1)]
         gradientLayer.cornerRadius = 10
         layer.insertSublayer(gradientLayer, at: 0)
         
